@@ -27,13 +27,13 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=forum
 DB_USERNAME=root
-DB_PASSWO
+DB_PASSWORD=
+```
 
 Then, migrate your database to create tables.
 
-```
-php artisan migrate
-```
+`php artisan migrate`
+
 
 
 ### Step 3.
@@ -61,6 +61,6 @@ Once finished, clear your server cache and you're all set to go!
 
 ### Step 5.
 
-Use your forum! Visit http://forum.com/threads to create a new account and publish your first thread after verifying your email.
+Use your forum! Visit http://forum.test/threads to create a new account and publish your first thread after verifying your email.
 
 
