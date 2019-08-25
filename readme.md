@@ -27,8 +27,14 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=forum
 DB_USERNAME=root
-DB_PASSWORD=
+DB_PASSWO
+
+Then, migrate your database to create tables.
+
 ```
+php artisan migrate
+```
+
 
 ### Step 3.
 
