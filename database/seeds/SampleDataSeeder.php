@@ -16,6 +16,7 @@ class SampleDataSeeder extends Seeder
      *
      * @return void
      */
+    # generate data with php artisan db:seed
     public function run()
     {
         Schema::disableForeignKeyConstraints();
