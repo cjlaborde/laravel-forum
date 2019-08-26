@@ -22,6 +22,9 @@ trait Favoritable
         $attributes = ['user_id' => auth()->id()];
         # if we don't find any matches in database then we use next command to apply new one.
         if (!$this->favorites()->where($attributes)->exists()) {
+//            dd('hit');
+            Reputation::award(auth()->user(), Reputation::REPLY_FAVORITED);
+//            dd(auth()->user()->fresh()->reputation);
             return $this->favorites()->create($attributes);
         }
     }
@@ -36,6 +39,8 @@ trait Favoritable
         # Get me a collection of favorites, filter over that collections and for each one going to delete the favorite
        #
         $this->favorites()->where($attributes)->get()->each->delete();
+
+        Reputation::reduce(auth()->user(), Reputation::REPLY_FAVORITED);
     }
 
     public function isFavorited()

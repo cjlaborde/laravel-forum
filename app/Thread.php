@@ -39,6 +39,7 @@ class Thread extends Model
 //           $thread->replies->each(function ($reply) {
 //                $reply->delete();
 //           });
+            Reputation::reduce($thread->creator, Reputation::THREAD_WAS_PUBLISHED);
         });
 
         # when thread created will immediately create the slug do it on created event.

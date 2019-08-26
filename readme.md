@@ -64,3 +64,7 @@ Once finished, clear your server cache and you're all set to go!
 Use your forum! Visit http://forum.test/threads to create a new account and publish your first thread after verifying your email.
 
 
+Profile image link public with storage
+
+
+ln -s "/home/cjlaborde/Documents/Laravel/Laravel-Projects/git-hub-projects/laravel-forum/storage/app/public/avatars/" "/home/cjlaborde/Documents/Laravel/Laravel-Projects/git-hub-projects/laravel-forum/public/"
