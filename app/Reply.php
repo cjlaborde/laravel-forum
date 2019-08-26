@@ -26,6 +26,9 @@ class Reply extends Model
         # we increment replies count every time a reply is created on thread.
         static::created(function ($reply) {
             $reply->thread->increment('replies_count');
+
+            // $reply->owner->increment('reputation', 2);
+            Reputation::award($reply->owner, Reputation::REPLY_POSTED);
         });
         # when we delete we remove 1 from the count.
         static::deleted(function ($reply) {

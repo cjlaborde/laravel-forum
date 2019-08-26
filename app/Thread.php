@@ -44,7 +44,12 @@ class Thread extends Model
         # when thread created will immediately create the slug do it on created event.
         static::created(function ($thread) {
             $thread->update(['slug' => $thread->title]);
+
+            Reputation::award($thread->creator, Reputation::THREAD_WAS_PUBLISHED);
+
+            // $thread->creator->increment('reputation', Reputation::THREAD_WAS_PUBLISHED);
         });
+
     }
 
     public function path()
@@ -172,6 +177,11 @@ class Thread extends Model
         # replaced by above
 //        $this->best_reply_id = $reply->id;
 //        $this->save();
+
+# award creator of the actual reply not the person giving best reply
+        // $reply->owner->increment('reputation', 50);
+        Reputation::award($reply->owner, Reputation::BEST_REPLY_AWARDED);
+
     }
 
     # generate->overwrite this method
