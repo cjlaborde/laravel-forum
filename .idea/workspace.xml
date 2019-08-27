@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="" />
+    <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +202,7 @@
       <updated>1566747713237</updated>
       <workItem from="1566747714554" duration="10896000" />
       <workItem from="1566842274972" duration="23265000" />
-      <workItem from="1566910221359" duration="716000" />
+      <workItem from="1566910221359" duration="1348000" />
     </task>
     <task id="LOCAL-00001" summary="Require email confirmation for new thread page. - resolve #1">
       <created>1566770338667</created>
