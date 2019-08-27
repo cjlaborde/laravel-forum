@@ -1,7 +1,8 @@
 <?php
  use App\User;
 use Illuminate\Database\Seeder;
- class UsersSeeder extends Seeder
+
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +12,7 @@ use Illuminate\Database\Seeder;
     public function run()
     {
         User::truncate();
-         factory(User::class)
+        factory(User::class)
             ->create([
                 'name' => 'John',
                 'email' => 'john@gmail.com',

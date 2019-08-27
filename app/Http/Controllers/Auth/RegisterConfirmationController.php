@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\User;
+use App\Http\Controllers\Controller;
+
 class RegisterConfirmationController extends Controller
 {
     /**
@@ -10,13 +12,12 @@ class RegisterConfirmationController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse
      */
-
     public function index()
     {
         $user = User::where('confirmation_token', request('token'))->first();
 
 //        dd($user);
-        # if no user and finds null instead show flash error message
+        // if no user and finds null instead show flash error message
         if (! $user) {
             return redirect(route('threads'))->with('flash', 'Unknown token.');
         }
