@@ -2,12 +2,12 @@
 
 namespace App\Policies;
 
-use App\Reply;
 use App\User;
+use App\Reply;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-# remember to Register Policy in AuthServiceProvider
-# need to active in App/Providers/AuthServiceProvider to work.
+// remember to Register Policy in AuthServiceProvider
+// need to active in App/Providers/AuthServiceProvider to work.
 class ReplyPolicy
 {
     use HandlesAuthorization;
@@ -23,7 +23,7 @@ class ReplyPolicy
             return true;
         }
 
-        # if no last reply then return true there is no problem.
+        // if no last reply then return true there is no problem.
         return ! $lastReply->wasJustPublished();
     }
 }

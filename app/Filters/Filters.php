@@ -1,20 +1,18 @@
 <?php
 
-
 namespace App\Filters;
-
 
 use Illuminate\Http\Request;
 
 class Filters
 {
-    protected $request, $builder;
+    protected $request;
+    protected $builder;
 
     protected $filters = [];
 
     public function __construct(Request $request)
     {
-
         $this->request = $request;
     }
 
@@ -27,7 +25,7 @@ class Filters
 //        dd($this->request->only($this->filters)); since we use by method user can't pass dangerous script http://localhost:8000/threads?by=John&badcode
 
         foreach ($this->getFilters() as $filter => $value) {
-            # if method exist for this filter trigger the filter and pass the value
+            // if method exist for this filter trigger the filter and pass the value
             if (method_exists($this, $filter)) {
                 $this->$filter($value);
             }
@@ -39,16 +37,10 @@ class Filters
     protected function getFilters()
     {
         $filters = array_intersect(array_keys($this->request->all()), $this->filters);
+
         return $this->request->only($filters);
     }
 }
-
-
-
-
-
-
-
 
 /*
 

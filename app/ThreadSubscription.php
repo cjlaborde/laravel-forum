@@ -16,7 +16,7 @@ class ThreadSubscription extends Model
 
     public function thread()
     {
-        # thread subscription also belongs to a thread.
+        // thread subscription also belongs to a thread.
         return $this->belongsTo(Thread::class);
     }
 

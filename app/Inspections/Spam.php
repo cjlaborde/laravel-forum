@@ -11,13 +11,13 @@ class Spam
 
     public function detect($body)
     {
-        # for each of the classes above
+        // for each of the classes above
         foreach ($this->inspections as $inspection) {
-            # use laravel container
+            // use laravel container
             app($inspection)->detect($body);
         }
 
-        # no spam found
+        // no spam found
         return false;
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App;
 
-use App\Events\ThreadReceivedNewReply;
-use App\Filters\ThreadFilters;
-use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use App\Filters\ThreadFilters;
+use App\Events\ThreadReceivedNewReply;
+use Illuminate\Database\Eloquent\Model;
 
 class Thread extends Model
 {
@@ -15,7 +15,7 @@ class Thread extends Model
 
     protected $with = ['creator', 'channel'];
 
-    # appends to the Json in threadscontroller.php
+    // appends to the Json in threadscontroller.php
     protected $appends = ['isSubscribedTo'];
 
     protected $casts = [
@@ -26,14 +26,14 @@ class Thread extends Model
     {
         parent::boot();
 
-        # since we store it as column no longer needed here.
+        // since we store it as column no longer needed here.
 //        # globalScore is query automatically applied to all queries
 //        static::addGlobalScope('replyCount', function ($builder) {
 //            $builder->withCount('replies');
 //        });
 
-        # delete also associated replies when you delete thread.
-        # for each reply in a thread I want to delete reply.
+        // delete also associated replies when you delete thread.
+        // for each reply in a thread I want to delete reply.
         static::deleting(function ($thread) {
             $thread->replies->each->delete();
 //           $thread->replies->each(function ($reply) {
@@ -42,7 +42,7 @@ class Thread extends Model
             Reputation::reduce($thread->creator, Reputation::THREAD_WAS_PUBLISHED);
         });
 
-        # when thread created will immediately create the slug do it on created event.
+        // when thread created will immediately create the slug do it on created event.
         static::created(function ($thread) {
             $thread->update(['slug' => $thread->title]);
 
@@ -50,7 +50,6 @@ class Thread extends Model
 
             // $thread->creator->increment('reputation', Reputation::THREAD_WAS_PUBLISHED);
         });
-
     }
 
     public function path()
@@ -61,7 +60,7 @@ class Thread extends Model
 
     public function replies()
     {
-        # shows in Json in (ThreadsController@show) every reply with favorites_count
+        // shows in Json in (ThreadsController@show) every reply with favorites_count
 //        return $this->hasMany(Reply::class)->withCount('favorites');
         return $this->hasMany(Reply::class);
     }
@@ -78,10 +77,10 @@ class Thread extends Model
 
     public function addReply($reply)
     {
-        # 1) Make the core to send a reply.
+        // 1) Make the core to send a reply.
         $reply = $this->replies()->create($reply);
 
-        # 2) Make an announcement.
+        // 2) Make an announcement.
         event(new ThreadReceivedNewReply($reply));
 
         return $reply;
@@ -105,12 +104,11 @@ class Thread extends Model
     public function subscribe($userId = null)
     {
         $this->subscriptions()->create([
-            # use userId if it provided otherwise fallback to checking the authenticated user.
+            // use userId if it provided otherwise fallback to checking the authenticated user.
             'user_id' => $userId ?: auth()->id()
         ]);
 
         return $this;
-
     }
 
     public function unsubscribe($userId = null)
@@ -122,7 +120,7 @@ class Thread extends Model
 
     public function subscriptions()
     {
-        # what is our relationship here
+        // what is our relationship here
         return $this->hasMany(ThreadSubscription::class);
     }
 
@@ -130,7 +128,7 @@ class Thread extends Model
     {
         return $this->subscriptions()
             ->where('user_id', auth()->id())
-            ->exists(); # check if record exist
+            ->exists(); // check if record exist
     }
 
     public function hasUpdatesFor($user)
@@ -145,7 +143,7 @@ class Thread extends Model
         return 'slug';
     }
 
-    # remove dangerous code like <script> with executable code.
+    // remove dangerous code like <script> with executable code.
     public function getBodyAttribute($body)
     {
 //        return $body;
@@ -155,7 +153,7 @@ class Thread extends Model
     public function setSlugAttribute($value)
     {
 
-        # if slug exists then create new slug.
+        // if slug exists then create new slug.
         if (static::whereSlug($slug = str_slug($value))->exists()) {
             $slug = "{$slug}-{$this->id}";
         }
@@ -175,34 +173,25 @@ class Thread extends Model
     public function markBestReply(Reply $reply)
     {
         $this->update(['best_reply_id' => $reply->id]);
-        # replaced by above
+        // replaced by above
 //        $this->best_reply_id = $reply->id;
 //        $this->save();
 
-# award creator of the actual reply not the person giving best reply
+        // award creator of the actual reply not the person giving best reply
         // $reply->owner->increment('reputation', 50);
         Reputation::award($reply->owner, Reputation::BEST_REPLY_AWARDED);
-
     }
 
-    # generate->overwrite this method
+    // generate->overwrite this method
     public function toSearchableArray()
     {
 //        return ['title' => $this->title];
-        # keep all results in algolia but also add a path method from app/Thread
-        # remember to use php artisan scout:import "App\Thread" to update json results
+        // keep all results in algolia but also add a path method from app/Thread
+        // remember to use php artisan scout:import "App\Thread" to update json results
         return $this->toArray() + ['path' => $this->path()];
 //            + ['avatar_path' => $user->getAvatarPathAttribute()];
     }
 }
-
-
-
-
-
-
-
-
 
 //    protected function incrementSlug($slug, $count = 2)
 //    {
@@ -216,10 +205,6 @@ class Thread extends Model
 //
 //        return $slug;
 //    }
-
-
-
-
 
 /*
 public function incrementSlug($slug)
@@ -255,7 +240,6 @@ public function incrementSlug($slug)
 //        $key = $user->visitedThreadCacheKey($this);
 //        return $this->updated_at > cache($key);
 //    }
-
 
 /*
  * Used for redis
