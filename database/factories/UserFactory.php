@@ -41,7 +41,8 @@ $factory->state(App\User::class, 'unconfirmed', function () {
 $factory->state(App\User::class, 'administrator', function () {
     return [
         // login to create an admin. John = Admin in User.php isAdmin function
-        'name' => 'John'
+//        'name' => 'John'
+          'isAdmin' => true
         # 'is_admin = true
     ];
 });
@@ -74,7 +75,8 @@ $factory->define(Channel::class, function (Faker $faker) {
 
     return [
         'name' => $name, // servers admin
-        'slug' => $name
+        'slug' => $name,
+        'description' => $faker->sentence
     ];
 });
 

@@ -36,6 +36,8 @@ Then, migrate your database to create tables.
 
 
 
+
+
 ### Step 3.
 
 reCAPTCHA is a Google tool to help prevent forum spam. You'll need to create a free account (don't worry,it's quick).
@@ -54,10 +56,16 @@ RECAPTCHA_SECRET=PASTE_SECRET_HERE
 
 ### Step 4.
 
+Step 2.
 Until an administration portal is available, manually insert any number of "channels" (think of these as forum categories) into the "channels" table in your database.
-Once finished, clear your server cache and you're all set to go!
+
+Visit: http://forum.test/register and register an account.
+Edit config/forum.php, adding the email address of the account you just created.
+Visit: http://forum.test/admin/channels and add at least one channel.
 
 `php artisan cache:clear`
+
+
 
 ### Step 5.
 
@@ -68,3 +76,4 @@ Profile image link public with storage
 
 
 ln -s "/home/cjlaborde/Documents/Laravel/Laravel-Projects/git-hub-projects/laravel-forum/storage/app/public/avatars/" "/home/cjlaborde/Documents/Laravel/Laravel-Projects/git-hub-projects/laravel-forum/public/"
+

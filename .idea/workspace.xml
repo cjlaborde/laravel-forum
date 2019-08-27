@@ -2,7 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChannelsController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/DashboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/channels/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/Admin/AdministratorTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Channel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Channel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Administrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Administrator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfEmailNotConfirmed.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfEmailNotConfirmed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/forum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2017_03_20_191601_create_channels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_03_20_191601_create_channels_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/authorizations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/authorizations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/LockThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/LockThreadsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,25 +176,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.ReputationTest">
-    <configuration name="ReputationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ReputationTest" file="$PROJECT_DIR$/tests/Feature/ReputationTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.AdministratorTest.an_administrator_can_access_the_administration_section">
+    <configuration name="AdministratorTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\admin\AdministratorTest" file="$PROJECT_DIR$/tests/Feature/Admin/AdministratorTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ReputationTest.a_user_earns_points_when_their_reply_is_favorited" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ReputationTest" file="$PROJECT_DIR$/tests/Feature/ReputationTest.php" method="a_user_earns_points_when_their_reply_is_favorited" scope="Method" />
+    <configuration name="AdministratorTest.an_administrator_can_access_the_administration_section" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\admin\AdministratorTest" file="$PROJECT_DIR$/tests/Feature/Admin/AdministratorTest.php" method="an_administrator_can_access_the_administration_section" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ReputationTest.a_user_lose_points_when_their_reply_to_a_thread_is_deleted" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ReputationTest" file="$PROJECT_DIR$/tests/Feature/ReputationTest.php" method="a_user_lose_points_when_their_reply_to_a_thread_is_deleted" scope="Method" />
+    <configuration name="ChannelAdministrationTest (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ReputationTest.a_user_lose_points_when_they_delete_a_thread" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ReputationTest" file="$PROJECT_DIR$/tests/Feature/ReputationTest.php" method="a_user_lose_points_when_they_delete_a_thread" scope="Method" />
+    <configuration name="ChannelAdministrationTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ReputationTest.a_user_loses_points_when_their_reply_is_unfavorited" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ReputationTest" file="$PROJECT_DIR$/tests/Feature/ReputationTest.php" method="a_user_loses_points_when_their_reply_is_unfavorited" scope="Method" />
+    <configuration name="ChannelAdministrationTest.an_administrator_can_access_the_channel_administration_section" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="an_administrator_can_access_the_channel_administration_section" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -181,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ReputationTest" />
-        <item itemvalue="PHPUnit.ReputationTest.a_user_loses_points_when_their_reply_is_unfavorited" />
-        <item itemvalue="PHPUnit.ReputationTest.a_user_earns_points_when_their_reply_is_favorited" />
-        <item itemvalue="PHPUnit.ReputationTest.a_user_lose_points_when_their_reply_to_a_thread_is_deleted" />
-        <item itemvalue="PHPUnit.ReputationTest.a_user_lose_points_when_they_delete_a_thread" />
+        <item itemvalue="PHPUnit.AdministratorTest.an_administrator_can_access_the_administration_section" />
+        <item itemvalue="PHPUnit.ChannelAdministrationTest.an_administrator_can_access_the_channel_administration_section" />
+        <item itemvalue="PHPUnit.ChannelAdministrationTest (1)" />
+        <item itemvalue="PHPUnit.ChannelAdministrationTest" />
+        <item itemvalue="PHPUnit.AdministratorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -200,7 +222,7 @@
       <option name="presentableId" value="Default" />
       <updated>1566747713237</updated>
       <workItem from="1566747714554" duration="10896000" />
-      <workItem from="1566842274972" duration="9460000" />
+      <workItem from="1566842274972" duration="21521000" />
     </task>
     <task id="LOCAL-00001" summary="Require email confirmation for new thread page. - resolve #1">
       <created>1566770338667</created>

@@ -26,7 +26,9 @@ class LockThreadsTest extends TestCase
     function administrators_can_lock_threads()
     {
         // login to create an admin. John = Admin in User.php isAdmin function
-        $this->signIn(factory('App\User')->states('administrator')->create());
+//        $this->signIn(factory('App\User')->states('administrator')->create());
+
+        $this->signInAdmin();
 
         # thread that belong to logged in user.
         $thread = create('App\Thread', ['user_id' => auth()->id()]);
@@ -40,7 +42,9 @@ class LockThreadsTest extends TestCase
     function administrators_can_unlock_threads()
     {
         // login to create an admin. John = Admin in User.php isAdmin function
-        $this->signIn(factory('App\User')->states('administrator')->create());
+//        $this->signIn(factory('App\User')->states('administrator')->create());
+
+        $this->signInAdmin();
 
         # thread that belong to logged in user.
         $thread = create('App\Thread', ['user_id' => auth()->id(), 'locked' => true ]);

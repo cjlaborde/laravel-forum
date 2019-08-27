@@ -26,6 +26,17 @@ class User extends Authenticatable
 
 
     /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = [
+        'isAdmin'
+    ];
+
+
+
+    /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
@@ -98,7 +109,17 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return in_array($this->name, ['John', 'JohnDoe']);
+        return in_array($this->email, config('forum.administrators'));
+    }
+
+    /**
+     * Determine if the user is an administrator.
+     *
+     * @return bool
+     */
+    public function getIsAdminAttribute()
+    {
+        return $this->isAdmin();
     }
 
     /**
