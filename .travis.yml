@@ -1,14 +1,20 @@
 language: php
 
 php:
-
   - 7.2
 
 before_script:
-  - composer install --dev --prefer-source --no-interaction
   - cp .env.travis .env
-  - php artisan key:generate
+  - composer self-update
+  - composer install --no-interaction
 
 script:
+  - php artisan key:generate
   - vendor/bin/phpunit
-  - vendor/bin/phpcs app --standard=PSR2
+
+services:
+  - redis-server
+
+cache:
+  directories:
+    - vendor
