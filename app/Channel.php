@@ -10,7 +10,7 @@ class Channel extends Model
 
     public function getRouteKeyName()
     {
-        # we want laravel to use slug instead of primary id key so we override getRouteKeyName
+        // we want laravel to use slug instead of primary id key so we override getRouteKeyName
         return 'slug';
     }
 
@@ -18,5 +18,4 @@ class Channel extends Model
     {
         return $this->hasMany(Thread::class);
     }
-
 }

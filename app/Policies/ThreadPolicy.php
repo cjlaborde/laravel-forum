@@ -6,7 +6,7 @@ use App\User;
 use App\Thread;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-# need to active in App/Providers/AuthServiceProvider to work.
+// need to active in App/Providers/AuthServiceProvider to work.
 class ThreadPolicy
 {
     use HandlesAuthorization;
@@ -19,7 +19,7 @@ class ThreadPolicy
      * @return mixed
      */
 
-    # Are you allowed to update?
+    // Are you allowed to update?
     public function update(User $user, Thread $thread)
     {
 //        checks if those 2 match up you are authorized
