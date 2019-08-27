@@ -8,6 +8,8 @@
 
 <script>
     import Trix from 'trix';
+    import 'trix/dist/trix.css';
+
     export default {
         props: ['name', 'value', 'placeholder', 'shouldClear'],
         mounted () {

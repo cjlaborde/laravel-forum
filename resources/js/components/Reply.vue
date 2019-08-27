@@ -34,7 +34,9 @@
                 </form>
             </div>
 
-            <div v-else v-html="body"></div>
+            <div ref="body" v-else>
+                <highlight :content="body"></highlight>
+            </div>
         </div>
 
 <!--            Show can update if it user id.-->
@@ -52,10 +54,11 @@
 
 <script>
     import Favorite from './Favorite.vue';
+    import Highlight from './Highlight.vue';
     import moment from 'moment';
     export default {
         props: ['reply'],
-        components: { Favorite },
+        components: { Favorite, Highlight },
         data() {
             return {
                 editing: false,
@@ -74,6 +77,7 @@
                 this.isBest = (id === this.id);
             });
         },
+
         methods: {
             update() {
                 axios.patch(

@@ -37,6 +37,8 @@
         .mr-1 { margin-right: 1em; }
         .ml-a { margin-left: auto; }
         [v-cloak] { display: none; }
+        /*.editor-content blockquote { font-style: italic; }*/
+        /*.editor-content pre { background-color: rgb(239,240,241); }*/
     </style>
     @yield('head')
 </head>

@@ -69,6 +69,8 @@ Vue.component('thread-view', require('./pages/Thread.vue').default);
 
 Vue.component('wysiwyg', require('./components/Wysiwyg.vue').default);
 
+Vue.component('channel-dropdown', require('./components/ChannelDropdown.vue').default);
+
 // Vue.component('wysiwyg-vue', require('./components/WysiwygVue.vue').default);
 
 // Vue.component('editor-vue', require('./components/EditorVue.vue').default);

@@ -33,7 +33,7 @@
             <span class="flex">
     {{--                        <a href="/profiles/{{ $thread->creator->name }}">{{ $thread->creator->name }}</a> posted:--}}
                 <a href="{{ route('profile', $thread->creator) }}">
-                    
+
                     {{ $thread->creator->name }} ({{ $thread->creator->reputation }} XP)
                 </a> posted: <span v-text="title"></span>
             </span>
@@ -41,7 +41,9 @@
         </div>
     </div>
 
-    <div class="card-body" v-html="body"></div>
+    <div ref="question" class="card-body">
+        <highlight :content="body"></highlight>
+    </div>
 
     <div class="card-footer" v-if="authorize('owns', thread)">
         <div class="level">
