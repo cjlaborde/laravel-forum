@@ -10,16 +10,15 @@ class SearchController extends Controller
     public function show(Trending $trending)
     {
         if (request()->expectsJson()) {
-            # return threads directly
+            // return threads directly
             return Thread::search(request('q'))->paginate(25);
         }
-        # piggy back on the Threads index() from ThreadsController
+        // piggy back on the Threads index() from ThreadsController
         return view('threads.search', [
             'trending' => $trending->get()
         ]);
     }
 }
-
 
 /*
 public function show(Trending $trending)

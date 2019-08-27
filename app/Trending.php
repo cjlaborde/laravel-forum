@@ -15,7 +15,7 @@ class Trending
 
     public function push($thread)
     {
-        # throw it at reddis with json without need to do database query.
+        // throw it at reddis with json without need to do database query.
 //        Redis::zincrby('trending_threads', 1, json_encode([
         Redis::zincrby($this->cacheKey(), 1, json_encode([
             'title' => $thread->title,
@@ -23,7 +23,7 @@ class Trending
         ]));
     }
 
-    # useful so that you have different cache for testing and serve otherwise you delete all everytime you test.
+    // useful so that you have different cache for testing and serve otherwise you delete all everytime you test.
     public function cacheKey()
     {
         return app()->environment('testing') ? 'testing_trending_threads' : 'trending_threads';
