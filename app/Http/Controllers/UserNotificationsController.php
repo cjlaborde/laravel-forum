@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\User;
 
 class UserNotificationsController extends Controller
@@ -11,6 +13,7 @@ class UserNotificationsController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Fetch all unread notifications for the user.
      *
@@ -20,6 +23,7 @@ class UserNotificationsController extends Controller
     {
         return auth()->user()->unreadNotifications;
     }
+
     /**
      * Mark a specific notification as read.
      *

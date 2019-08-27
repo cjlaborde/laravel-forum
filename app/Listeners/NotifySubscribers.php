@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use App\Events\ThreadReceivedNewReply;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NotifySubscribers
 {
@@ -16,8 +14,8 @@ class NotifySubscribers
      */
     public function handle(ThreadReceivedNewReply $event)
     {
-      $event->reply->thread->subscriptions
-        # return just as long the subscription user id is not the reply user id.
+        $event->reply->thread->subscriptions
+        // return just as long the subscription user id is not the reply user id.
             ->where('user_id', '!=', $event->reply->user_id)
             ->each
             ->notify($event->reply);
