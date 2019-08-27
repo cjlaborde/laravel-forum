@@ -1,4 +1,4 @@
-# Laravel Forum
+# Laravel Forum [![Build Status](https://travis-ci.org/cjlaborde/laravel-forum.svg?branch=master)](https://travis-ci.org/cjlaborde/laravel-forum)
 
 This is an open source forum that was build with laravel php framework
 
