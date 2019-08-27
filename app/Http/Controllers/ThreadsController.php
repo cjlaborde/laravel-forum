@@ -64,8 +64,8 @@ class ThreadsController extends Controller
      * @return \Illuminate\Http\Response
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Recaptcha $recaptcha)
-    {
+    public function store(Recaptcha $recaptcha) {
+        $name = 'some var';
         # see the Json response when creating thread used for debugging
 //        dd(request()->all());
 
