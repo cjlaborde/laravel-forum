@@ -6,7 +6,8 @@ return [
         'secret' => env('RECAPTCHA_SECRET')
     ],
     'administrators' => [
-        'joe@gmail.com'
+        'joe@gmail.com',
+        'john@gmail.com'
         // Add the email addresses of users who should be administrators here.
     ]
 ];

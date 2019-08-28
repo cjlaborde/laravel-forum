@@ -28,8 +28,11 @@
                 <li>
                     <a class="nav-link" href="/threads/create">New Threads</a>
                 </li>
-                    <channel-dropdown :channels="{{ $channels }}"></channel-dropdown>
-{{--                <li class="dropdown">--}}
+{{--                    <channel-dropdown :channels="{{ $channels }}"></channel-dropdown>--}}
+
+
+
+                {{--                <li class="dropdown">--}}
 {{--                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"--}}
 {{--                       aria-expanded="false">Channels <span class="caret"></span></a>--}}
 

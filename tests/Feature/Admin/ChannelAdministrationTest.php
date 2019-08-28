@@ -9,6 +9,7 @@ use Tests\TestCase;
 class ChannelAdministrationTest extends TestCase
 {
     use RefreshDatabase;
+
     protected function setUp(): void
     {
         parent::setUp();
@@ -47,6 +48,46 @@ class ChannelAdministrationTest extends TestCase
             ->assertSee('php')
             ->assertSee('This is the channel for discussing all things PHP.');
     }
+
+    /** @test */
+    public function an_administrator_can_edit_an_existing_channel()
+    {
+        $this->signInAdmin();
+        $this->patch(
+            route('admin.channels.update', ['channel' => create(\App\Channel::class)->slug]),
+            $updatedChannel = [
+                'name' => 'altered',
+                'description' => 'altered channel description',
+                'color' => '#00ff00',
+                'archived' => true
+            ]
+        );
+        $this->get(route('admin.channels.index'))
+            ->assertSee($updatedChannel['name'])
+            ->assertSee($updatedChannel['description']);
+    }
+
+    /** @test */
+    public function an_administrator_can_mark_an_existing_channel_as_archieved()
+    {
+        $this->signInAdmin();
+
+        $channel = create('App\Channel');
+
+        $this->assertFalse($channel->archived);
+
+        $this->patch(
+            route('admin.channels.update', ['channel' => $channel->slug]),
+            [
+                'name' => 'altered',
+                'description' => 'altered channel description',
+                'archived' => true
+            ]
+        );
+
+        $this->assertTrue($channel->fresh()->archived);
+    }
+
     /** @test */
     public function a_channel_requires_a_name()
     {

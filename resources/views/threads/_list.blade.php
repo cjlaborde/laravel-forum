@@ -7,6 +7,11 @@
                         <h4>
                             {{--                                        <a href="/threads/{{ $thread->id }}">--}}
                             <a href="{{ $thread->path() }}">
+
+                                @if ($thread->pinned)
+                                    <i class="fas fa-thumbtack"></i>
+                                @endif
+
                                 @if (auth()->check() && $thread->hasUpdatesFor(auth()->user()))
                                     <strong>
                                         {{ $thread->title }}

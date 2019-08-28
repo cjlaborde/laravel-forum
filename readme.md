@@ -32,7 +32,11 @@ DB_PASSWORD=
 
 Then, migrate your database to create tables.
 
+Set admin in config/forum.php
+
 `php artisan migrate`
+
+`php artisan db:seed`
 
 
 

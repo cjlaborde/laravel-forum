@@ -71,12 +71,13 @@ $factory->define(Thread::class, function (Faker $faker) {
 });
 
 $factory->define(Channel::class, function (Faker $faker) {
-    $name = $faker->word;
+    $name = $faker->unique()->word;
 
     return [
         'name' => $name, // servers admin
         'slug' => $name,
-        'description' => $faker->sentence
+        'description' => $faker->sentence,
+        'archived' => false
     ];
 });
 

@@ -54,7 +54,9 @@ class ThreadsController extends Controller
      */
     public function create()
     {
-        return view('threads.create');
+        return view('threads.create', [
+            'channels' => Channel::all()
+        ]);
     }
 
     /**
@@ -234,7 +236,11 @@ class ThreadsController extends Controller
      */
     private function getThreads(Channel $channel, ThreadFilters $filters)
     {
-        $threads = Thread::latest()->filter($filters);
+//        $threads = Thread::latest()->filter($filters);
+
+        $threads = Thread::orderBy('pinned', 'DESC')
+            ->latest()
+            ->filter($filters);
         # it did not replace the default latests that why popularity filter from ThreadFilters Do not work. so remove latests
 //        $threads = Thread::filter($filters);
 

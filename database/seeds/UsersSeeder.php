@@ -11,10 +11,12 @@ use Illuminate\Database\Seeder;
     public function run()
     {
         User::truncate();
+
          factory(User::class)
             ->create([
                 'name' => 'John',
                 'email' => 'john@gmail.com',
+                'password' => bcrypt('john@gmail.com')
             ]);
     }
 }

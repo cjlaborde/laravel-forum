@@ -37,6 +37,8 @@ Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store');
 Route::post('locked-threads/{thread}', 'LockedThreadsController@store')->name('locked-threads.store')->middleware('admin');
 Route::delete('locked-threads/{thread}', 'LockedThreadsController@destroy')->name('locked-threads.destroy')->middleware('admin');
 
+Route::post('pinned-threads/{thread}', 'PinnedThreadsController@store')->name('pinned-threads.store')->middleware('admin');
+Route::delete('pinned-threads/{thread}', 'PinnedThreadsController@destroy')->name('pinned-threads.destroy')->middleware('admin');
 
 Route::patch('/replies/{reply}', 'RepliesController@update');
 Route::delete('/replies/{reply}', 'RepliesController@destroy')->name('replies.destroy');
@@ -58,7 +60,8 @@ Route::get('/register/confirm', 'Auth\RegisterConfirmationController@index')->na
 
 Route::get('api/users', 'Api\UsersController@index');
 Route::post('api/users/{user}/avatar', 'Api\UserAvatarController@store')->middleware('auth')->name('avatar');
-# our end point # '/threads/{channel}/thread}/subscriptions'
+
+Route::get('api/channels', 'Api\ChannelsController@index');
 
 Route::group([
     'prefix' => 'admin',
@@ -69,4 +72,7 @@ Route::group([
     Route::post('/channels', 'ChannelsController@store')->name('admin.channels.store');
     Route::get('/channels', 'ChannelsController@index')->name('admin.channels.index');
     Route::get('/channels/create', 'ChannelsController@create')->name('admin.channels.create');
+
+    Route::get('/channels/{channel}/edit', 'ChannelsController@edit')->name('admin.channels.edit');
+    Route::patch('/channels/{channel}', 'ChannelsController@update')->name('admin.channels.update');
 });

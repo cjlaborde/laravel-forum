@@ -2,24 +2,30 @@
 
 @section('administration-content')
 
-    <p><a class="btn btn-sm btn-default" href="{{ route('admin.channels.create') }}">New Channel <span class="glyphicon glyphicon-plus"></span></a></p>
+    <p><a class="btn btn-sm btn-success" href="{{ route('admin.channels.create') }}">New Channel <span class="glyphicon glyphicon-plus"></span></a></p>
 
     <table class="table">
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>Slug</th>
-            <th>Description</th>
-            <th>Threads</th>
-        </tr>
+            <tr>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Description</th>
+                <th>Threads</th>
+                <th>Actions</th>
+            </tr>
         </thead>
+
         <tbody>
         @forelse($channels as $channel)
-            <tr>
+            <tr class="{{ $channel->archived ? 'table-primary' : '' }}">
+{{--                {{ $channel->archived }}--}}
                 <td>{{$channel->name}}</td>
                 <td>{{$channel->slug}}</td>
                 <td>{{$channel->description}}</td>
-                <td>{{ $channel->threads_count }}</td>
+                <td>{{$channel->threads()->count()}}</td>
+                <td>
+                    <a href="{{ route('admin.channels.edit', ['channel' => $channel->slug]) }}" class="btn btn-primary btn-xs">Edit</a>
+                </td>
             </tr>
         @empty
             <tr>

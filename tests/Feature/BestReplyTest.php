@@ -33,23 +33,17 @@ class BestReplyTest extends TestCase
     }
 
     /** @test */
-    function only_the_thread_creator_may_mark_a_reply_as_best()
+    public function only_the_thread_creator_may_mark_a_reply_as_best()
     {
+        $this->withExceptionHandling();
         $this->signIn();
-
-        # create thread and associate it with signed in user.
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
-
-        $replies = create('App\Reply', ['thread_id' => $thread->id], 2);
-
-        # create new user and sign them in
-        $this->signIn(create('App\User'));
-
-        # they should not be able to sign in
+        $thread = create(\App\Thread::class, ['user_id' => auth()->id()]);
+        $replies = create(\App\Reply::class, ['thread_id' => $thread->id], 2);
+        $this->signIn(create(\App\User::class));
         $this->postJson(route('best-replies.store', [$replies[1]->id]))->assertStatus(403);
-
         $this->assertFalse($replies[1]->fresh()->isBest());
     }
+
 
     /** @test */
     function if_a_best_reply_is_deleted_then_the_thread_is_properly_updated_to_reflect_that()
