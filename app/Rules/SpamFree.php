@@ -24,7 +24,7 @@ class SpamFree implements Rule
      * @param  mixed  $value
      * @return bool
      */
-    # does your given value pass validation
+    // does your given value pass validation
     public function passes($attribute, $value)
     {
         try {

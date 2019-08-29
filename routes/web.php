@@ -10,7 +10,6 @@
 |
 */
 
-
 //dd(App::environment());
 Route::get('/', function () {
 //    \Mail::to(App\User::first())->send(new \App\Mail\PleaseConfirmYourEmail());
@@ -45,7 +44,6 @@ Route::delete('/replies/{reply}', 'RepliesController@destroy')->name('replies.de
 
 Route::post('/replies/{reply}/best', 'BestRepliesController@store')->name('best-replies.store');
 
-
 Route::post('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@store')->middleware('auth');
 Route::delete('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@destroy')->middleware('auth');
 
@@ -67,7 +65,7 @@ Route::group([
     'prefix' => 'admin',
     'middleware' => 'admin',
     'namespace' => 'Admin'
-], function() {
+], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
     Route::post('/channels', 'ChannelsController@store')->name('admin.channels.store');
     Route::get('/channels', 'ChannelsController@index')->name('admin.channels.index');

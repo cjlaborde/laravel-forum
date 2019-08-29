@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Http\Controllers\Api;
+
 use App\Channel;
 use App\Http\Controllers\Controller;
+
 class ChannelsController extends Controller
 {
     /**
