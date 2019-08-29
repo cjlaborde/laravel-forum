@@ -24,7 +24,7 @@ class PinThreadsTest extends TestCase
         $this->signInAdmin();
         $thread = create('App\Thread', ['pinned' => true]);
         $this->delete(route('pinned-threads.destroy', $thread));
-        $this->assertFalse($thread->fresh()->pinned, 'Failed asserting that the thread was unlocked.');
+        $this->assertFalse($thread->fresh()->pinned, 'Failed asserting that the thread was unpinned.');
     }
     /** @test */
     public function pinned_threads_are_listed_first()

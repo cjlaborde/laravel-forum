@@ -16,7 +16,7 @@ class Thread extends Model
     protected $with = ['creator', 'channel'];
 
     # appends to the Json in threadscontroller.php
-    protected $appends = ['isSubscribedTo'];
+//    protected $appends = ['isSubscribedTo'];
 
     protected $casts = [
         'locked' => 'boolean',
@@ -74,7 +74,7 @@ class Thread extends Model
 
     public function channel()
     {
-        return $this->belongsTo(Channel::class);
+        return $this->belongsTo(Channel::class)->withoutGlobalScope('active');
     }
 
     public function addReply($reply)

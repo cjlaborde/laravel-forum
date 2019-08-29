@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="new-reply">
         <div v-if="signedIn">
             <div class="form-group">
                 <wysiwyg name="body" v-model="body" placeholder="Have something to say?" :shouldClear="completed"></wysiwyg>
@@ -24,6 +24,14 @@
         </p>
     </div>
 </template>
+
+<style scoped>
+    .new-reply {
+        padding: 15px;
+        background-color: #fff;
+        border: 1px solid #e3e3e3;
+    }
+</style>
 
 <script>
     import 'jquery.caret';

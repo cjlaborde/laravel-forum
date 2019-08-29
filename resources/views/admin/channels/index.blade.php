@@ -17,12 +17,12 @@
 
         <tbody>
         @forelse($channels as $channel)
-            <tr class="{{ $channel->archived ? 'table-primary' : '' }}">
+            <tr class="{{ $channel->archived ? 'table-danger' : '' }}">
 {{--                {{ $channel->archived }}--}}
                 <td>{{$channel->name}}</td>
                 <td>{{$channel->slug}}</td>
                 <td>{{$channel->description}}</td>
-                <td>{{$channel->threads()->count()}}</td>
+                <td>{{ $channel->threads_count }}</td>
                 <td>
                     <a href="{{ route('admin.channels.edit', ['channel' => $channel->slug]) }}" class="btn btn-primary btn-xs">Edit</a>
                 </td>

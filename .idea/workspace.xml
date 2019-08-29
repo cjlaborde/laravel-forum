@@ -2,37 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ChannelsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/channels/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Feature/PinThreadsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Channel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Channel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChannelsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChannelsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/forum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2017_03_15_175959_create_threads_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_03_15_175959_create_threads_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2017_03_20_191601_create_channels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_03_20_191601_create_channels_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SampleDataSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SampleDataSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ChannelDropdown.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ChannelDropdown.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/pages/Thread.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Thread.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Wysiwyg.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Wysiwyg.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ChannelTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ChannelTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -184,7 +164,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.ChannelAdministrationTest.an_administrator_can_edit_an_existing_channel">
+  <component name="RunManager" selected="PHPUnit.ChannelAdministrationTest.the_path_to_a_channel_is_unaffected_by_its_archived_status">
     <configuration name="BestReplyTest.only_the_thread_creator_may_mark_a_reply_as_best" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\BestReplyTest" file="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" method="only_the_thread_creator_may_mark_a_reply_as_best" scope="Method" />
       <method v="2" />
@@ -193,16 +173,16 @@
       <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="an_administrator_can_edit_an_existing_channel" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ChannelAdministrationTest.an_administrator_can_mark_an_existing_channel_as_archieved" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="an_administrator_can_mark_an_existing_channel_as_archieved" scope="Method" />
+    <configuration name="ChannelAdministrationTest.archive_channel_should_not_influence_existing_thread" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="archive_channel_should_not_influence_existing_thread" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ChannelTest.a_channel_can_be_archived" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ChannelTest" file="$PROJECT_DIR$/tests/Unit/ChannelTest.php" method="a_channel_can_be_archived" scope="Method" />
+    <configuration name="ChannelAdministrationTest.the_path_to_a_channel_is_unaffected_by_its_archived_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="the_path_to_a_channel_is_unaffected_by_its_archived_status" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ChannelTest.archived_channels_are_excluded_by_defaults" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ChannelTest" file="$PROJECT_DIR$/tests/Unit/ChannelTest.php" method="archived_channels_are_excluded_by_defaults" scope="Method" />
+    <configuration name="CreateThreadsTest.a_new_thread_cannot_be_created_in_an_archived_channel" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\CreateThreadsTest" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" method="a_new_thread_cannot_be_created_in_an_archived_channel" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -211,11 +191,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ChannelAdministrationTest.the_path_to_a_channel_is_unaffected_by_its_archived_status" />
+        <item itemvalue="PHPUnit.ChannelAdministrationTest.archive_channel_should_not_influence_existing_thread" />
+        <item itemvalue="PHPUnit.CreateThreadsTest.a_new_thread_cannot_be_created_in_an_archived_channel" />
         <item itemvalue="PHPUnit.ChannelAdministrationTest.an_administrator_can_edit_an_existing_channel" />
         <item itemvalue="PHPUnit.BestReplyTest.only_the_thread_creator_may_mark_a_reply_as_best" />
-        <item itemvalue="PHPUnit.ChannelTest.archived_channels_are_excluded_by_defaults" />
-        <item itemvalue="PHPUnit.ChannelAdministrationTest.an_administrator_can_mark_an_existing_channel_as_archieved" />
-        <item itemvalue="PHPUnit.ChannelTest.a_channel_can_be_archived" />
       </list>
     </recent_temporary>
   </component>
@@ -232,7 +212,7 @@
       <workItem from="1566747714554" duration="10896000" />
       <workItem from="1566842274972" duration="23265000" />
       <workItem from="1566910221359" duration="2984000" />
-      <workItem from="1567002648015" duration="22181000" />
+      <workItem from="1567002648015" duration="29436000" />
     </task>
     <task id="LOCAL-00001" summary="Require email confirmation for new thread page. - resolve #1">
       <created>1566770338667</created>

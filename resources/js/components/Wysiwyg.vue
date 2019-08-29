@@ -6,6 +6,14 @@
     </div>
 </template>
 
+<style scoped>
+    trix-editor {
+        min-height: 100px;
+    }
+    .editor-content blockquote { font-style: italic; background: #1b1e21}
+    .editor-content pre { background-color: rgb(239,240,241); }
+</style>
+
 <script>
     import Trix from 'trix';
     import 'trix/dist/trix.css';
