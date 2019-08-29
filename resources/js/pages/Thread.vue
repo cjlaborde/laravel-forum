@@ -26,7 +26,7 @@
 
         methods: {
             toogleLock () {
-                let uri = `/locked-thread/${this.thread.slug}`;
+                let uri = `/locked-threads/${this.thread.slug}`;
                 // ajax request
                 axios[this.locked ? 'delete' : 'post'] (uri);
                 this.locked = !this.locked;

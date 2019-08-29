@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,17 +11,17 @@
 |
 */
 
-
 //dd(App::environment());
-Route::get('/', function () {
+// Route::get('/', function () {
 //    \Mail::to(App\User::first())->send(new \App\Mail\PleaseConfirmYourEmail());
-    return view('welcome');
-});
+//    return view('welcome');
+//});
+
+Route::redirect('', 'threads');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
+Route::get('/home', 'HomeController@index')->name('home');
 Route::view('scan', 'scan');
 
 Route::get('threads', 'ThreadsController@index')->name('threads');
@@ -40,7 +41,7 @@ Route::delete('locked-threads/{thread}', 'LockedThreadsController@destroy')->nam
 Route::post('pinned-threads/{thread}', 'PinnedThreadsController@store')->name('pinned-threads.store')->middleware('admin');
 Route::delete('pinned-threads/{thread}', 'PinnedThreadsController@destroy')->name('pinned-threads.destroy')->middleware('admin');
 
-Route::patch('/replies/{reply}', 'RepliesController@update');
+Route::patch('/replies/{reply}', 'RepliesController@update')->name('replies.update');
 Route::delete('/replies/{reply}', 'RepliesController@destroy')->name('replies.destroy');
 
 Route::post('/replies/{reply}/best', 'BestRepliesController@store')->name('best-replies.store');
@@ -55,24 +56,21 @@ Route::delete('/replies/{reply}/favorites', 'FavoritesController@destroy');
 Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
 Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
-
 Route::get('/register/confirm', 'Auth\RegisterConfirmationController@index')->name('register.confirm');
 
-Route::get('api/users', 'Api\UsersController@index');
+Route::get('api/users', 'Api\UsersController@index')->name('api.users');
 Route::post('api/users/{user}/avatar', 'Api\UserAvatarController@store')->middleware('auth')->name('avatar');
-
 Route::get('api/channels', 'Api\ChannelsController@index');
 
 Route::group([
     'prefix' => 'admin',
     'middleware' => 'admin',
     'namespace' => 'Admin'
-], function() {
+], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard.index');
     Route::post('/channels', 'ChannelsController@store')->name('admin.channels.store');
     Route::get('/channels', 'ChannelsController@index')->name('admin.channels.index');
     Route::get('/channels/create', 'ChannelsController@create')->name('admin.channels.create');
-
     Route::get('/channels/{channel}/edit', 'ChannelsController@edit')->name('admin.channels.edit');
     Route::patch('/channels/{channel}', 'ChannelsController@update')->name('admin.channels.update');
 });
