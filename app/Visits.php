@@ -1,10 +1,9 @@
 <?php
 
-################ Use This Only When Using  REDIS #######################
-########## We going to use database instead since we prefer KISS in this case.
+//############### Use This Only When Using  REDIS #######################
+//######### We going to use database instead since we prefer KISS in this case.
 
 namespace App;
-
 
 use Illuminate\Support\Facades\Redis;
 
@@ -20,8 +19,8 @@ class Visits
     public function record()
     {
         Redis::incr($this->cacheKey());
-        return $this;
 
+        return $this;
     }
 
     public function reset()
