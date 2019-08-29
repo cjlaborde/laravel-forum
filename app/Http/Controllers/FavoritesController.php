@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Favorite;
 use App\Reply;
-use Illuminate\Http\Request;
+use App\Favorite;
 
 class FavoritesController extends Controller
 {
@@ -27,6 +26,5 @@ class FavoritesController extends Controller
 //        $favorite->where('user_id', auth()->id())->delete();
 //
 //        return back();
-
     }
 }
