@@ -14,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->isLocal()) {
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+        }
     }
 
     /**
@@ -37,6 +39,12 @@ class AppServiceProvider extends ServiceProvider
         \Schema::defaultStringLength(191);
 
         \Validator::extend('spamfree', 'App\Rules\SpamFree@passes');
+        # Debug by Sending all SQL queries to Log File
+        /*
+        \DB::listen(function ($e) {
+            info($e->sql);
+        });
+        */
     }
 }
 
