@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
 //            $channels = \Cache::rememberForever('channel', function () {
 //                return Channel::all();
 //            });
-////            var_dump('querying');
+        ////            var_dump('querying');
 //            $view->with('channels', $channels);
 //        });
 
@@ -39,19 +39,6 @@ class AppServiceProvider extends ServiceProvider
         \Validator::extend('spamfree', 'App\Rules\SpamFree@passes');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //\View::share('channels', Channel::all());
 

@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Reply extends Model
 {
     use Favoritable, RecordsActivity;
-    # used to project from error
-    # dd [body] to fillable property to allow mass assignment
+    // used to project from error
+    // dd [body] to fillable property to allow mass assignment
     protected $guarded = [];
 
 //    We want to use this relationship for every single query.
-//Now every query for a reply will automatically fetch the favorites
+    //Now every query for a reply will automatically fetch the favorites
     protected $with = ['owner', 'favorites'];
 
 //    append custom attributes to the json
@@ -22,16 +22,16 @@ class Reply extends Model
     protected static function boot()
     {
         parent::boot();
-        # we increment replies count every time a reply is created on thread.
+        // we increment replies count every time a reply is created on thread.
         static::created(function ($reply) {
             $reply->thread->increment('replies_count');
 
             // $reply->owner->increment('reputation', 2);
             Reputation::award($reply->owner, Reputation::REPLY_POSTED);
         });
-        # when we delete we remove 1 from the count.
+        // when we delete we remove 1 from the count.
         static::deleted(function ($reply) {
-            # at the application level but we going to do it on database level instead
+            // at the application level but we going to do it on database level instead
 //            if ($reply->isBest()) {
 //                $reply->thread->update(['best_reply_id' => null]);
 //            }
@@ -63,20 +63,20 @@ class Reply extends Model
     {
         preg_match_all('/@([\w\-]+)/', $this->body, $matches);
 
-        # return matches minus the @ symbol
+        // return matches minus the @ symbol
         return $matches[1];
     }
 
     public function path()
     {
-        return $this->thread->path() . "#reply-{$this->id}";
+        return $this->thread->path()."#reply-{$this->id}";
     }
 
     public function setBodyAttribute($body)
     {
-        #   https://regexr.com/
-        # 0 = give me everything in match '/@([^\s]+)/'  #------> @JaneDoe
-        # $1 = give only what is between brackets ([^\s]+) exclude @ #------> JaneDoe
+        //   https://regexr.com/
+        // 0 = give me everything in match '/@([^\s]+)/'  #------> @JaneDoe
+        // $1 = give only what is between brackets ([^\s]+) exclude @ #------> JaneDoe
 //        $this->attributes['body'] = preg_replace('/@([^\s\.]+)/', '<a href="/profiles/$1">$0</a>', $body); // Hey @JaneDoe
         $this->attributes['body'] = preg_replace(
             '/@([\w\-]+)/',
