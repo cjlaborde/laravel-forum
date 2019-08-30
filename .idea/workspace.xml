@@ -2,12 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/LoadCommonData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/all-threads.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/avatars/default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/best-answer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/little-guy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/notifi.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/popular-thread.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/replies.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/unsw-thread.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/visits.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Dropdown.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/LogoutButton.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Register.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/_btn.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/components/widget.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/sections/_trix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/sections/search.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/breadcrumbs.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/channels-sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modals/all.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modals/login.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modals/new-thread.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/modals/register.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/alarm.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/all-threads.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/best-reply.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/book.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/eye.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/heart.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/question.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/search.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/star.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/logo.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/bootstrap-4.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/semantic-ui.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-bootstrap-4.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/vendor/pagination/simple-default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tailwind.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Notifications/YouWereMentioned.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/YouWereMentioned.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/scout.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/scout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2017_03_20_191601_create_channels_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2017_03_20_191601_create_channels_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/authorizations.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/authorizations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Favorite.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Favorite.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Flash.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Flash.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Replies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Replies.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/SubscribeButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/SubscribeButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/UserNotifications.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/UserNotifications.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Thread.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Thread.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/SearchTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/SearchTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -159,25 +241,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.ChannelAdministrationTest.the_path_to_a_channel_is_unaffected_by_its_archived_status">
-    <configuration name="BestReplyTest.only_the_thread_creator_may_mark_a_reply_as_best" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\BestReplyTest" file="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" method="only_the_thread_creator_may_mark_a_reply_as_best" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.MentionUsersTest.mentioned_users_in_a_reply_notified">
+    <configuration name="MentionUsersTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\MentionUsersTest" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="ChannelAdministrationTest.an_administrator_can_edit_an_existing_channel" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="an_administrator_can_edit_an_existing_channel" scope="Method" />
+    <configuration name="MentionUsersTest.mentioned_users_in_a_reply_notified" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\MentionUsersTest" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="mentioned_users_in_a_reply_notified" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ChannelAdministrationTest.archive_channel_should_not_influence_existing_thread" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="archive_channel_should_not_influence_existing_thread" scope="Method" />
+    <configuration name="PinThreadsTest.pinned_threads_are_listed_first" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\PinThreadsTest" file="$PROJECT_DIR$/tests/Feature/PinThreadsTest.php" method="pinned_threads_are_listed_first" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ChannelAdministrationTest.the_path_to_a_channel_is_unaffected_by_its_archived_status" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Admin\ChannelAdministrationTest" file="$PROJECT_DIR$/tests/Feature/Admin/ChannelAdministrationTest.php" method="the_path_to_a_channel_is_unaffected_by_its_archived_status" scope="Method" />
+    <configuration name="SearchTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\SearchTest" file="$PROJECT_DIR$/tests/Feature/SearchTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="CreateThreadsTest.a_new_thread_cannot_be_created_in_an_archived_channel" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\CreateThreadsTest" file="$PROJECT_DIR$/tests/Feature/CreateThreadsTest.php" method="a_new_thread_cannot_be_created_in_an_archived_channel" scope="Method" />
+    <configuration name="UserTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\UserTest" file="$PROJECT_DIR$/tests/Unit/UserTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -186,11 +268,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ChannelAdministrationTest.the_path_to_a_channel_is_unaffected_by_its_archived_status" />
-        <item itemvalue="PHPUnit.ChannelAdministrationTest.archive_channel_should_not_influence_existing_thread" />
-        <item itemvalue="PHPUnit.CreateThreadsTest.a_new_thread_cannot_be_created_in_an_archived_channel" />
-        <item itemvalue="PHPUnit.ChannelAdministrationTest.an_administrator_can_edit_an_existing_channel" />
-        <item itemvalue="PHPUnit.BestReplyTest.only_the_thread_creator_may_mark_a_reply_as_best" />
+        <item itemvalue="PHPUnit.MentionUsersTest.mentioned_users_in_a_reply_notified" />
+        <item itemvalue="PHPUnit.MentionUsersTest" />
+        <item itemvalue="PHPUnit.PinThreadsTest.pinned_threads_are_listed_first" />
+        <item itemvalue="PHPUnit.SearchTest" />
+        <item itemvalue="PHPUnit.UserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +290,7 @@
       <workItem from="1566842274972" duration="23265000" />
       <workItem from="1566910221359" duration="2984000" />
       <workItem from="1567002648015" duration="31213000" />
-      <workItem from="1567091551214" duration="5153000" />
+      <workItem from="1567091551214" duration="34488000" />
     </task>
     <task id="LOCAL-00001" summary="Require email confirmation for new thread page. - resolve #1">
       <created>1566770338667</created>

@@ -15,6 +15,7 @@ class MentionUsersTest extends TestCase
     /** @test */
     function mentioned_users_in_a_reply_notified()
     {
+        $this->withoutExceptionHandling();
         // Given I have a user. JohnDoe, who is signed in.
         $john = create('App\User', ['name' => 'JohnDoe']);
         $this->signIn($john);

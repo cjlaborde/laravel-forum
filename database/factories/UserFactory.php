@@ -77,7 +77,8 @@ $factory->define(Channel::class, function (Faker $faker) {
         'name' => $name, // servers admin
         'slug' => $name,
         'description' => $faker->sentence,
-        'archived' => false
+        'archived' => false,
+        'color' => $faker->hexcolor
     ];
 });
 

@@ -5,8 +5,47 @@
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap/scss/bootstrap';
 
 @import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 @import  '~trix/dist/trix.css';
+
+
+// Tailwind
+
+@tailwind preflight;
+
+@import "components/btn";
+@import "components/widget";
+
+@import "sections/search";
+@import "sections/trix";
+
+@tailwind utilities;
+
+a {
+    @apply .text-grey-darkest;
+    text-decoration: none;
+
+    &.link:hover {
+        text-decoration: underline;
+    }
+}
+
+input {
+    @apply .border .border-grey-light;
+}
+
+pre {
+    @apply .whitespace-pre-wrap;
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.ais-highlight > em {
+    font-weight: bold;
+    @apply .text-black;
+}

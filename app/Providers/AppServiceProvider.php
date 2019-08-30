@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use App\Channel;
-use Illuminate\Filesystem\Cache;
+use App\Trending;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,9 +20,10 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
+     * @param Trending $trending
      * @return void
      */
-    public function boot()
+    public function boot(Trending $trending)
     {
 //        \View::composer('*', function($view)
 //        {

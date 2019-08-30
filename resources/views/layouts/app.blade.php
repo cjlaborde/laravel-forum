@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- CSRF Token -->
@@ -9,13 +10,18 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <!-- Scripts -->
-{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
     <script>
         window.App = {!! json_encode([
+            'csrfToken' => csrf_token(),
             'user' => Auth::user(),
             'signedIn' => Auth::check()
-            ]) !!};
+        ]) !!};
     </script>
 
     <!-- Fonts -->
@@ -23,36 +29,35 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.css">--}}
-{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.2.0/trix.css">--}}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.1/trix.css">
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
-    <style>
-        body { padding-bottom: 100px;}
-        .level { display: flex; align-items: center; }
-        .level-item { margin-right: 1em; }
-        .flex { flex: 1; }
-        .mr-1 { margin-right: 1em; }
-        .ml-a { margin-left: auto; }
-        [v-cloak] { display: none; }
-        /*.editor-content blockquote { font-style: italic; }*/
-        /*.editor-content pre { background-color: rgb(239,240,241); }*/
-    </style>
     @yield('head')
 </head>
-<body>
+
+<body class="font-sans bg-grey-lighter">
     <div id="app">
-    @include('layouts.nav')
+        @include ('layouts.nav')
 
-        <main class="py-4">
-            @yield('content')
+        <div class="container mx-auto">
+            <div class="flex">
+                @section('sidebar')
+                    @include('sidebar')
+                @show
 
-            <flash message="{{ session('flash') }}"></flash>
-        </main>
+                <div class="px-10 bg-white flex-1">
+                    @yield('content')
+                </div>
+
+                 @include('channels-sidebar')
+            </div>
+        </div>
+
+        <flash message="{{ session('flash') }}"></flash>
+
+        @include('modals.all')
     </div>
 
+    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     @yield('scripts')
 </body>

@@ -32,7 +32,7 @@ Route::patch('threads/{channel}/{thread}', 'ThreadsController@update');
 
 Route::delete('threads/{channel}/{thread}', 'ThreadsController@destroy');
 Route::post('threads', 'ThreadsController@store')->middleware('must-be-confirmed');
-Route::get('threads/{channel}', 'ThreadsController@index');
+Route::get('threads/{channel}', 'ThreadsController@index')->name('channels');
 Route::get('/threads/{channel}/{thread}/replies', 'RepliesController@index');
 Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store');
 Route::post('locked-threads/{thread}', 'LockedThreadsController@store')->name('locked-threads.store')->middleware('admin');
