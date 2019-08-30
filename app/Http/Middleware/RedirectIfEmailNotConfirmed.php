@@ -8,7 +8,7 @@ class RedirectIfEmailNotConfirmed
 {
     /**
      * Handle an incoming request.	     * Handle an incoming request.
-     *	     *
+     *	     *.
      * @param  \Illuminate\Http\Request  $request	     * @param  \Illuminate\Http\Request $request
      * @param  \Closure  $next	     * @param  \Closure $next
      * @return mixed	     * @return mixed
@@ -16,7 +16,7 @@ class RedirectIfEmailNotConfirmed
     public function handle($request, Closure $next)
     {
         $user = $request->user();
-        # request user not confirm redirect.
+        // request user not confirm redirect.
         if (! $user->confirmed && ! $user->isAdmin()) {
             return redirect('/threads')->with('flash', 'You must first confirm your email address.');
         }
