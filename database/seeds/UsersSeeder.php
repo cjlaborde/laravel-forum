@@ -15,6 +15,7 @@ use Illuminate\Database\Seeder;
          factory(User::class)
             ->create([
                 'name' => 'John',
+                'username' => 'John',
                 'email' => 'john@gmail.com',
                 'password' => bcrypt('john@gmail.com')
             ]);

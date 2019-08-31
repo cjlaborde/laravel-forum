@@ -1,22 +1,24 @@
 <script>
-    import Replies from '../components/Replies.vue';
-    import SubscribeButton from '../components/SubscribeButton.vue';
-    import Highlight from '../components/Highlight.vue';
+    import Replies from "../components/Replies.vue";
+    import SubscribeButton from "../components/SubscribeButton.vue";
+    import Highlight from "../components/Highlight.vue";
 
     export default {
-        props: ['thread'],
-        components: {Replies, SubscribeButton, Highlight},
-        data () {
+        props: ["thread"],
+
+        components: { Replies, SubscribeButton, Highlight },
+
+        data() {
             return {
                 repliesCount: this.thread.replies_count,
                 locked: this.thread.locked,
                 pinned: this.thread.pinned,
                 title: this.thread.title,
                 body: this.thread.body,
-                // # access  all laravel database form values here
                 form: {},
-                editing: false
-
+                editing: false,
+                feedback: "",
+                errors: false
             };
         },
 
@@ -24,48 +26,63 @@
             this.resetForm();
         },
 
+        watch: {
+            editing(enabled) {
+                if (enabled) {
+                    this.$modal.show("update-thread");
+                } else {
+                    this.$modal.hide("update-thread");
+                }
+            }
+        },
+
         methods: {
-            toogleLock () {
+            toggleLock() {
                 let uri = `/locked-threads/${this.thread.slug}`;
-                // ajax request
-                axios[this.locked ? 'delete' : 'post'] (uri);
+
+                axios[this.locked ? "delete" : "post"](uri);
+
                 this.locked = !this.locked;
             },
 
-            togglePin () {
+            togglePin() {
                 let uri = `/pinned-threads/${this.thread.slug}`;
 
-                axios[this.pinned ? 'delete' : 'post'](uri);
-                this.pinned = ! this.pinned;
+                axios[this.pinned ? "delete" : "post"](uri);
+
+                this.pinned = !this.pinned;
             },
 
             update() {
-                // axios
-                let uri = `/threads/${this.thread.channel.slug}/${this.thread.slug}`;
-                // /threads/channel/thread-slug
-                axios.patch(uri, this.form).then(() => {
-                    this.editing = false;
-                    this.title = this.form.title;
-                    this.body = this.form.body;
+                let uri = `/threads/${this.thread.channel.slug}/${
+                    this.thread.slug
+                }`;
 
-                    flash('Your thread has been updated.');
-                })
+                axios
+                    .patch(uri, this.form)
+                    .then(() => {
+                        this.editing = false;
+                        this.title = this.form.title;
+                        this.body = this.form.body;
+
+                        flash("Your thread has been updated.");
+                    })
+                    .catch(error => {
+                        this.feedback = "Whoops, validation failed.";
+                        this.errors = error.response.data.errors;
+                    });
             },
 
-            resetForm () {
+            resetForm() {
                 this.form = {
                     title: this.thread.title,
                     body: this.thread.body
                 };
 
                 this.editing = false;
-            },
-            classes(target) {
-                return [
-                    'btn',
-                    target ? 'btn-primary' : 'btn-default'
-                ];
+
+                this.$modal.hide("update-thread");
             }
         }
-    }
+    };
 </script>

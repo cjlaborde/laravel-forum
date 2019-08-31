@@ -9,20 +9,7 @@ class ProfilesTest extends TestCase
     function a_user_has_a_profile()
     {
         $user = create('App\User');
-        $this->get("/profiles/{$user->name}")
+        $this->get("/profiles/{$user->username}")
             ->assertSee($user->name);
-    }
-    /** @test */
-    function profiles_display_all_threads_created_by_the_associated_user()
-    {
-        $this->signIn();
-
-        # user create thread
-        $thread = create('App\Thread', ['user_id' => auth()->id()]);
-
-        # see that thread title in user profile
-        $this->get("/profiles/" . auth()->user()->name)
-            ->assertSee($thread->title)
-            ->assertSee($thread->body);
     }
 }

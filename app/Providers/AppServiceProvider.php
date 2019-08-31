@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use App\Channel;
-use Illuminate\Filesystem\Cache;
+use App\Trending;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,15 +14,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->isLocal()) {
+            $this->app->register(\Barryvdh\Debugbar\ServiceProvider::class);
+        }
     }
 
     /**
      * Bootstrap any application services.
      *
+     * @param Trending $trending
      * @return void
      */
-    public function boot()
+    public function boot(Trending $trending)
     {
 //        \View::composer('*', function($view)
 //        {
@@ -37,6 +39,12 @@ class AppServiceProvider extends ServiceProvider
         \Schema::defaultStringLength(191);
 
         \Validator::extend('spamfree', 'App\Rules\SpamFree@passes');
+        # Debug by Sending all SQL queries to Log File
+        /*
+        \DB::listen(function ($e) {
+            info($e->sql);
+        });
+        */
     }
 }
 

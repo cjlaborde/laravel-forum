@@ -30,7 +30,7 @@ class ThreadsController extends Controller
      * @param Trending $trending
      * @return \Illuminate\Http\Response
      */
-    public function index(Channel $channel, ThreadFilters $filters, Trending $trending)
+    public function index(Channel $channel, ThreadFilters $filters)
     {
         $threads = $this->getThreads($channel, $filters);
 
@@ -44,7 +44,7 @@ class ThreadsController extends Controller
 //        return view('threads.index', compact('threads', 'trending'));
         return view('threads.index', [
             'threads' => $threads,
-            'trending' => $trending->get()
+            'channel' => $channel
         ]);
     }
 
@@ -97,7 +97,7 @@ class ThreadsController extends Controller
                   $query->where('archived', false);
               })
             ],
-            'g-recaptcha-response' => ['required', $recaptcha]
+//            'g-recaptcha-response' => ['required', $recaptcha]
         ]);
 
 //        dd('where never even get to this point. this used for debugging');
@@ -257,7 +257,7 @@ class ThreadsController extends Controller
 //        dd($threads->toSql()); # output the SQL that been constructed. # http://localhost:8000/threads?popular=1
 
 //        return $threads->get();
-        return $threads->paginate(25);
+        return $threads->paginate(config('forum.pagination.perPage'));
     }
 
 }

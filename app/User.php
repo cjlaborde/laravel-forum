@@ -53,7 +53,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'confirmed' => 'boolean'
+        'confirmed' => 'boolean',
+        'reputation' => 'integer'
     ];
 
     /**
@@ -63,7 +64,7 @@ class User extends Authenticatable
      */
     public function getRouteKeyName()
     {
-        return 'name';
+        return 'username';
     }
 
     /**
@@ -143,7 +144,7 @@ class User extends Authenticatable
      */
     public function getAvatarPathAttribute($avatar)
     {
-        return asset($avatar ?: 'images/avatars/default.png');
+        return asset($avatar ?: 'images/avatars/default.svg');
     }
 
     /**

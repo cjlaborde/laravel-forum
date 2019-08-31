@@ -23,4 +23,9 @@ class ProfilesController extends Controller
         ]);
     }
 
+    public function index(User $user)
+    {
+        return ['activities' => Activity::paginatedFeed($user)->paginate(5)];
+    }
+
 }

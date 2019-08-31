@@ -56,7 +56,7 @@ class ReadThreadsTest extends TestCase
         $this->withoutExceptionHandling();
 
         # create user and set username
-        $this->signIn(create('App\User', ['name' => 'JohnDoe']));
+        $this->signIn(create('App\User', ['username' => 'JohnDoe']));
 
         $threadByJohn = create('App\Thread', ['user_id' => auth()->id()]);
 

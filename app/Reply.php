@@ -17,7 +17,7 @@ class Reply extends Model
     protected $with = ['owner', 'favorites'];
 
 //    append custom attributes to the json
-    protected $appends = ['favoritesCount', 'isFavorited', 'isBest'];
+    protected $appends = ['favoritesCount', 'isFavorited', 'isBest', 'xp'];
 
     protected static function boot()
     {
@@ -69,7 +69,22 @@ class Reply extends Model
 
     public function path()
     {
-        return $this->thread->path() . "#reply-{$this->id}";
+        $perPage = config('forum.pagination.perPage'); // we want  2 per page
+
+        // Determine the position of reply
+//        dd($this->thread->replies()->pluck('id')->search($this->id));
+
+        # we have to account for 0 index which would be +1
+        $replyPosition = $this->thread->replies()->pluck('id')->search($this->id) + 1; // position is 5
+
+        // ceil to make 2 /5 = 2.5 ceil push it to page 3
+        // ceil($replyPosition / $perPage); // should be 3 / 1 = 3
+
+//        dd($replyPosition);
+
+        $page = ceil($replyPosition / $perPage);
+
+        return $this->thread->path() . "?page={$page}#reply-{$this->id}";
     }
 
     public function setBodyAttribute($body)
@@ -95,6 +110,14 @@ class Reply extends Model
         return $this->isBest();
     }
 
+    public function getXpAttribute()
+    {
+        $xp = config('forum.reputation.reply_posted');
+        if ($this->isBest()) {
+            $xp += config('forum.reputation.best_reply_awarded');
+        }
+        return $xp += $this->favorites()->count() * config('forum.reputation.reply_favorited');
+    }
     public function getBodyAttribute($body)
     {
 //        return $body;

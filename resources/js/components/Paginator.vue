@@ -1,16 +1,14 @@
 <template>
-    <ul class="pagination" v-if="shouldPaginate">
-        <li class="page-item" v-show="prevUrl">
-<!--            prevent default-->
-            <a class="page-link" href="#" aria-label="Previous" rel="prev" @click.prevent="page--">
-                <span aria-hidden="true">&laquo; Previous</span>
-                <span class="sr-only">Previous</span>
+    <ul v-if="shouldPaginate">
+        <li v-show="prevUrl" class="inline">
+            <!--            prevent default-->
+            <a href="#" aria-label="Previous" rel="prev" @click.prevent="page--">
+                <span class="text-xs mr-2" aria-hidden="true">&laquo; Previous</span>
             </a>
         </li>
-        <li class="page-item" v-show="nextUrl">
-            <a class="page-link" href="#" aria-label="Next" rel="next" @click.prevent="page++">
-                <span aria-hidden="true">Next &raquo;</span>
-                <span class="sr-only">Next</span>
+        <li v-show="nextUrl" class="inline">
+            <a href="#" aria-label="Next" rel="next" @click.prevent="page++">
+                <span class="text-xs" aria-hidden="true">Next &raquo;</span>
             </a>
         </li>
     </ul>
@@ -18,7 +16,8 @@
 
 <script>
     export default {
-        props: ['dataSet'],
+        props: ["dataSet"],
+
         data() {
             return {
                 // track current page:
@@ -27,6 +26,7 @@
                 nextUrl: false
             }
         },
+
         watch: {
             dataSet() {
                 this.page = this.dataSet.current_page;
@@ -38,20 +38,23 @@
                 this.broadcast().updateUrl();
             }
         },
+
         computed: {
             // # shold display pagination links only if we have both next and pre url pages
             shouldPaginate() {
                 return !! this.prevUrl || !! this.nextUrl;
             }
         },
+
         methods: {
             broadcast() {
                 // # update and send page user request
-                return this.$emit('changed', this.page);
+                return this.$emit("changed", this.page);
             },
+
             updateUrl() {
                 // # dynamically change url query page=3
-                history.pushState(null, null, '?page=' + this.page);
+                history.pushState(null, null, "?page=" + this.page);
             }
         }
     }

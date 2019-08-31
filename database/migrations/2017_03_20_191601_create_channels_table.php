@@ -15,10 +15,11 @@ class CreateChannelsTable extends Migration
     {
         Schema::create('channels', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 50);
-            $table->string('slug', 50);
+            $table->string('name', 50)->unique();
+            $table->string('slug', 50)->unique();
             $table->string('description')->nullable();
             $table->boolean('archived')->default(false);
+            $table->string('color', 7)->default('#000000');
             $table->timestamps();
         });
     }
