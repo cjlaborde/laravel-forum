@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Http\Middleware;
+
 use Closure;
 use App\Trending;
+
 class LoadCommonData
 {
     /**
@@ -15,6 +18,7 @@ class LoadCommonData
     {
         view()->share('channels', \App\Channel::all());
         view()->share('trending', app(Trending::class)->get());
+
         return $next($request);
     }
 }

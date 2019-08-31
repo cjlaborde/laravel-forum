@@ -1,6 +1,9 @@
 <?php
+
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
+
 class Channel extends Model
 {
     /**
@@ -15,6 +18,7 @@ class Channel extends Model
     protected $casts = [
         'archived' => 'boolean'
     ];
+
     /**
      * Boot the channels model.
      */
@@ -28,6 +32,7 @@ class Channel extends Model
             $builder->orderBy('name', 'asc');
         });
     }
+
     /**
      * Get the route key name for Laravel.
      *
@@ -37,6 +42,7 @@ class Channel extends Model
     {
         return 'slug';
     }
+
     /**
      * A channel consists of threads.
      *
@@ -46,6 +52,7 @@ class Channel extends Model
     {
         return $this->hasMany(Thread::class);
     }
+
     /**
      * Archive the channel.
      */
@@ -53,6 +60,7 @@ class Channel extends Model
     {
         $this->update(['archived' => true]);
     }
+
     /**
      * Set the name of the channel.
      *
@@ -63,6 +71,7 @@ class Channel extends Model
         $this->attributes['name'] = $name;
         $this->attributes['slug'] = str_slug($name);
     }
+
     /**
      * Get a new query builder that includes archives.
      */

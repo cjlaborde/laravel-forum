@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreatePostRequest;
-use App\Notifications\YouWereMentioned;
+use App\User;
 use App\Reply;
 use App\Thread;
-use App\User;
-
-use Illuminate\Support\Facades\Gate;
+use App\Http\Requests\CreatePostRequest;
 
 class RepliesController extends Controller
 {
@@ -19,13 +16,14 @@ class RepliesController extends Controller
     {
         $this->middleware('auth', ['except' => 'index']);
     }
+
     public function index($channelId, Thread $thread)
     {
         return $thread->replies()->paginate(config('forum.pagination.perPage'));
     }
 
     /**
-     * @param integer $channelId
+     * @param int $channelId
      * @param Thread $thread
      * @param CreatePostRequest $form
      * @return  \Illuminate\Http\RedirectResponse
@@ -35,12 +33,13 @@ class RepliesController extends Controller
         if ($thread->locked) {
             return response('Thread is locked', 422);
         }
-            # 3 add the reply
-            return $thread->addReply([
+        // 3 add the reply
+        return $thread->addReply([
                 'body' => request('body'),
                 'user_id' => auth()->id()
             ])->load('owner');
     }
+
     /**
      * @param Reply $reply
      * @param Spam $spam
@@ -49,7 +48,7 @@ class RepliesController extends Controller
      */
     public function update(Reply $reply)
     {
-        # do not allow not signed in users to update a reply.
+        // do not allow not signed in users to update a reply.
         $this->authorize('update', $reply);
 
         request()->validate(['body' => 'required|spamfree']);
@@ -70,6 +69,7 @@ class RepliesController extends Controller
         if (request()->expectsJson()) {
             return response(['status' => 'Reply deleted']);
         }
+
         return back();
     }
 }
