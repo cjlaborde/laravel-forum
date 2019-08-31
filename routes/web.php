@@ -38,6 +38,9 @@ Route::post('/threads/{channel}/{thread}/replies', 'RepliesController@store');
 Route::post('locked-threads/{thread}', 'LockedThreadsController@store')->name('locked-threads.store')->middleware('admin');
 Route::delete('locked-threads/{thread}', 'LockedThreadsController@destroy')->name('locked-threads.destroy')->middleware('admin');
 
+Route::post('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@store')->middleware('auth');
+Route::delete('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@destroy')->middleware('auth');
+
 Route::post('pinned-threads/{thread}', 'PinnedThreadsController@store')->name('pinned-threads.store')->middleware('admin');
 Route::delete('pinned-threads/{thread}', 'PinnedThreadsController@destroy')->name('pinned-threads.destroy')->middleware('admin');
 
@@ -45,18 +48,19 @@ Route::patch('/replies/{reply}', 'RepliesController@update')->name('replies.upda
 Route::delete('/replies/{reply}', 'RepliesController@destroy')->name('replies.destroy');
 
 Route::post('/replies/{reply}/best', 'BestRepliesController@store')->name('best-replies.store');
-
-
-Route::post('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@store')->middleware('auth');
-Route::delete('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@destroy')->middleware('auth');
-
 Route::post('/replies/{reply}/favorites', 'FavoritesController@store');
 Route::delete('/replies/{reply}/favorites', 'FavoritesController@destroy');
+
 
 Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
 Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
+
+
 Route::get('/register/confirm', 'Auth\RegisterConfirmationController@index')->name('register.confirm');
+
+Route::get('/profiles/{user}/activity', 'ProfilesController@index')->name('activity');
+
 
 Route::get('api/users', 'Api\UsersController@index')->name('api.users');
 Route::post('api/users/{user}/avatar', 'Api\UserAvatarController@store')->middleware('auth')->name('avatar');

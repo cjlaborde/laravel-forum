@@ -257,7 +257,7 @@ class ThreadsController extends Controller
 //        dd($threads->toSql()); # output the SQL that been constructed. # http://localhost:8000/threads?popular=1
 
 //        return $threads->get();
-        return $threads->paginate(25);
+        return $threads->paginate(config('forum.pagination.perPage'));
     }
 
 }

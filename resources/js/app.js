@@ -71,11 +71,23 @@ Vue.component("logout-button", require("./components/LogoutButton.vue").default)
 
 Vue.component("register", require("./components/Register.vue").default);
 
+Vue.component("highlight", require("./components/Highlight.vue"));
+
 Vue.component("paginator", require("./components/Paginator.vue").default);
 
 Vue.component("user-notifications", require("./components/UserNotifications.vue").default);
 
 Vue.component("avatar-form", require("./components/AvatarForm.vue").default);
+
+Vue.component("activities", require("./components/Activities").default);
+
+Vue.component("activity-layout", require("./components/ActivityLayout").default);
+
+Vue.component("activity-favorite", require("./components/ActivityFavorite").default);
+
+Vue.component("activity-reply", require("./components/ActivityReply").default);
+
+Vue.component("activity-thread", require("./components/ActivityThread").default);
 
 Vue.component("thread-view", require("./pages/Thread.vue").default);
 

@@ -2,9 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Activities.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/ActivityFavorite.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/ActivityLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/ActivityReply.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/ActivityThread.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/mixins/activity.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/forum.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/forum.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Highlight.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Highlight.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Paginator.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Paginator.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +173,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.BestReplyTest.if_a_best_reply_is_deleted_then_the_thread_is_properly_updated_to_reflect_that">
+  <component name="RunManager" selected="PHPUnit.ReplyTest.it_generates_the_correct_path_for_a_paginated_thread">
     <configuration name="BestReplyTest.if_a_best_reply_is_deleted_then_the_thread_is_properly_updated_to_reflect_that" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\BestReplyTest" file="$PROJECT_DIR$/tests/Feature/BestReplyTest.php" method="if_a_best_reply_is_deleted_then_the_thread_is_properly_updated_to_reflect_that" scope="Method" />
       <method v="2" />
@@ -169,12 +186,12 @@
       <TestRunner class="Tests\Feature\MentionUsersTest" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="mentioned_users_in_a_reply_notified" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="PinThreadsTest.pinned_threads_are_listed_first" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\PinThreadsTest" file="$PROJECT_DIR$/tests/Feature/PinThreadsTest.php" method="pinned_threads_are_listed_first" scope="Method" />
+    <configuration name="ReplyTest.a_reply_knows_the_total_xp_earned" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ReplyTest" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="a_reply_knows_the_total_xp_earned" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="SearchTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\SearchTest" file="$PROJECT_DIR$/tests/Feature/SearchTest.php" scope="Class" />
+    <configuration name="ReplyTest.it_generates_the_correct_path_for_a_paginated_thread" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ReplyTest" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_generates_the_correct_path_for_a_paginated_thread" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -183,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.ReplyTest.it_generates_the_correct_path_for_a_paginated_thread" />
+        <item itemvalue="PHPUnit.ReplyTest.a_reply_knows_the_total_xp_earned" />
         <item itemvalue="PHPUnit.BestReplyTest.if_a_best_reply_is_deleted_then_the_thread_is_properly_updated_to_reflect_that" />
         <item itemvalue="PHPUnit.MentionUsersTest.mentioned_users_in_a_reply_notified" />
         <item itemvalue="PHPUnit.MentionUsersTest" />
-        <item itemvalue="PHPUnit.PinThreadsTest.pinned_threads_are_listed_first" />
-        <item itemvalue="PHPUnit.SearchTest" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +223,7 @@
       <workItem from="1566910221359" duration="2984000" />
       <workItem from="1567002648015" duration="31213000" />
       <workItem from="1567091551214" duration="34488000" />
-      <workItem from="1567172495824" duration="4473000" />
+      <workItem from="1567172495824" duration="16456000" />
     </task>
     <task id="LOCAL-00001" summary="Require email confirmation for new thread page. - resolve #1">
       <created>1566770338667</created>
