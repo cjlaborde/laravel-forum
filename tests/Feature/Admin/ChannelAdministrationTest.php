@@ -67,26 +67,26 @@ class ChannelAdministrationTest extends TestCase
             ->assertSee($updatedChannel['description']);
     }
 
-    /** @test */
-    public function an_administrator_can_mark_an_existing_channel_as_archieved()
-    {
-        $this->signInAdmin();
-
-        $channel = create('App\Channel');
-
-        $this->assertFalse($channel->archived);
-
-        $this->patch(
-            route('admin.channels.update', ['channel' => $channel->slug]),
-            [
-                'name' => 'altered',
-                'description' => 'altered channel description',
-                'archived' => true
-            ]
-        );
-
-        $this->assertTrue($channel->fresh()->archived);
-    }
+//    /** @test */
+//    public function an_administrator_can_mark_an_existing_channel_as_archieved()
+//    {
+//        $this->signInAdmin();
+//
+//        $channel = create('App\Channel');
+//
+//        $this->assertFalse($channel->archived);
+//
+//        $this->patch(
+//            route('admin.channels.update', ['channel' => $channel->slug]),
+//            [
+//                'name' => 'altered',
+//                'description' => 'altered channel description',
+//                'archived' => true
+//            ]
+//        );
+//
+//        $this->assertTrue($channel->fresh()->archived);
+//    }
 
     /** @test */
     public function the_path_to_a_channel_is_unaffected_by_its_archived_status()
