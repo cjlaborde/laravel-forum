@@ -112,13 +112,12 @@ class Reply extends Model
 
     public function getXpAttribute()
     {
-        $xp = $this->isBest() ? config('council.reputation.best_reply_awarded') : 0;
-        $xp += config('council.reputation.reply_posted');
-        $xp += $this->favorites()->count() * config('council.reputation.reply_favorited');
-
-        return $xp;
+        $xp = config('forum.reputation.reply_posted');
+        if ($this->isBest()) {
+            $xp += config('forum.reputation.best_reply_awarded');
+        }
+        return $xp += $this->favorites()->count() * config('forum.reputation.reply_favorited');
     }
-
     public function getBodyAttribute($body)
     {
 //        return $body;
