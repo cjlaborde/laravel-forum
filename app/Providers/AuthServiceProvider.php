@@ -1,7 +1,10 @@
 <?php
+
 namespace App\Providers;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -25,8 +28,10 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Gate::before(function ($user) {
-             # You can declare admins here so that they can delete any thread they want.
-                if ($user->name === 'John') return true;
+            // You can declare admins here so that they can delete any thread they want.
+            if ($user->name === 'John') {
+                return true;
+            }
         });
     }
 }

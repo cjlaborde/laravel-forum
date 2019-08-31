@@ -32,14 +32,14 @@ class AppServiceProvider extends ServiceProvider
 //            $channels = \Cache::rememberForever('channel', function () {
 //                return Channel::all();
 //            });
-////            var_dump('querying');
+        ////            var_dump('querying');
 //            $view->with('channels', $channels);
 //        });
 
         \Schema::defaultStringLength(191);
 
         \Validator::extend('spamfree', 'App\Rules\SpamFree@passes');
-        # Debug by Sending all SQL queries to Log File
+        // Debug by Sending all SQL queries to Log File
         /*
         \DB::listen(function ($e) {
             info($e->sql);
@@ -47,19 +47,6 @@ class AppServiceProvider extends ServiceProvider
         */
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //\View::share('channels', Channel::all());
 
