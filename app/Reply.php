@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Reply extends Model
 {
     use Favoritable, RecordsActivity;
-    # used to project from error
-    # dd [body] to fillable property to allow mass assignment
+    // used to project from error
+    // dd [body] to fillable property to allow mass assignment
     protected $guarded = [];
 
 //    We want to use this relationship for every single query.
-//Now every query for a reply will automatically fetch the favorites
+    //Now every query for a reply will automatically fetch the favorites
     protected $with = ['owner', 'favorites'];
 
 //    append custom attributes to the json
@@ -22,16 +22,16 @@ class Reply extends Model
     protected static function boot()
     {
         parent::boot();
-        # we increment replies count every time a reply is created on thread.
+        // we increment replies count every time a reply is created on thread.
         static::created(function ($reply) {
             $reply->thread->increment('replies_count');
 
             // $reply->owner->increment('reputation', 2);
             Reputation::award($reply->owner, Reputation::REPLY_POSTED);
         });
-        # when we delete we remove 1 from the count.
+        // when we delete we remove 1 from the count.
         static::deleted(function ($reply) {
-            # at the application level but we going to do it on database level instead
+            // at the application level but we going to do it on database level instead
 //            if ($reply->isBest()) {
 //                $reply->thread->update(['best_reply_id' => null]);
 //            }
@@ -63,7 +63,7 @@ class Reply extends Model
     {
         preg_match_all('/@([\w\-]+)/', $this->body, $matches);
 
-        # return matches minus the @ symbol
+        // return matches minus the @ symbol
         return $matches[1];
     }
 
@@ -74,7 +74,7 @@ class Reply extends Model
         // Determine the position of reply
 //        dd($this->thread->replies()->pluck('id')->search($this->id));
 
-        # we have to account for 0 index which would be +1
+        // we have to account for 0 index which would be +1
         $replyPosition = $this->thread->replies()->pluck('id')->search($this->id) + 1; // position is 5
 
         // ceil to make 2 /5 = 2.5 ceil push it to page 3
@@ -84,14 +84,14 @@ class Reply extends Model
 
         $page = ceil($replyPosition / $perPage);
 
-        return $this->thread->path() . "?page={$page}#reply-{$this->id}";
+        return $this->thread->path()."?page={$page}#reply-{$this->id}";
     }
 
     public function setBodyAttribute($body)
     {
-        #   https://regexr.com/
-        # 0 = give me everything in match '/@([^\s]+)/'  #------> @JaneDoe
-        # $1 = give only what is between brackets ([^\s]+) exclude @ #------> JaneDoe
+        //   https://regexr.com/
+        // 0 = give me everything in match '/@([^\s]+)/'  #------> @JaneDoe
+        // $1 = give only what is between brackets ([^\s]+) exclude @ #------> JaneDoe
 //        $this->attributes['body'] = preg_replace('/@([^\s\.]+)/', '<a href="/profiles/$1">$0</a>', $body); // Hey @JaneDoe
         $this->attributes['body'] = preg_replace(
             '/@([\w\-]+)/',
@@ -116,8 +116,10 @@ class Reply extends Model
         if ($this->isBest()) {
             $xp += config('forum.reputation.best_reply_awarded');
         }
+
         return $xp += $this->favorites()->count() * config('forum.reputation.reply_favorited');
     }
+
     public function getBodyAttribute($body)
     {
 //        return $body;
