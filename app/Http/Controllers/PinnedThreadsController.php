@@ -15,6 +15,7 @@ class PinnedThreadsController extends Controller
     {
         $thread->update(['pinned' => true]);
     }
+
     /**
      * Un-Pin the given thread.
      *

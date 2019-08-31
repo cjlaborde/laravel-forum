@@ -19,13 +19,13 @@ class Activity extends Model
                 $favoritedModel = Reply::find($subject->favorited_id);
             }
         }
+
         return $favoritedModel;
     }
 
-
     public function subject()
     {
-        # figures out what the appropiate relationship is for that activity
+        // figures out what the appropiate relationship is for that activity
         return $this->morphTo();
     }
 
@@ -37,8 +37,8 @@ class Activity extends Model
             ->take($take)
             ->get()
             ->groupBy(function ($activity) {
-            return $activity->created_at->format('Y-m-d');
-        });
+                return $activity->created_at->format('Y-m-d');
+            });
     }
 
     /**
@@ -56,5 +56,3 @@ class Activity extends Model
             ->with('subject');
     }
 }
-
-

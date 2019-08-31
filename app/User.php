@@ -3,8 +3,8 @@
 namespace App;
 
 use Carbon\Carbon;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -22,8 +22,7 @@ class User extends Authenticatable
 //        'avatar_path'
 //    ];
 
-        protected $guarded = []; # alternative with fillable allow all. Less secure through
-
+    protected $guarded = []; // alternative with fillable allow all. Less secure through
 
     /**
      * The accessors to append to the model's array form.
@@ -33,8 +32,6 @@ class User extends Authenticatable
     protected $appends = [
         'isAdmin'
     ];
-
-
 
     /**
      * The attributes that should be hidden for arrays.
@@ -155,6 +152,6 @@ class User extends Authenticatable
      */
     public function visitedThreadCacheKey($thread)
     {
-        return sprintf("users.%s.visits.%s", $this->id, $thread->id);
+        return sprintf('users.%s.visits.%s', $this->id, $thread->id);
     }
 }

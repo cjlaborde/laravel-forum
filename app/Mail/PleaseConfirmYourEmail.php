@@ -1,9 +1,12 @@
 <?php
+
 namespace App\Mail;
+
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
+
 class PleaseConfirmYourEmail extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
@@ -13,6 +16,7 @@ class PleaseConfirmYourEmail extends Mailable implements ShouldQueue
      * @var \App\User
      */
     public $user;
+
     /**
      * Create a new mailable instance.
      *
@@ -22,6 +26,7 @@ class PleaseConfirmYourEmail extends Mailable implements ShouldQueue
     {
         $this->user = $user;
     }
+
     /**
      * Build the email.
      *
