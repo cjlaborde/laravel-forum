@@ -5,7 +5,6 @@ namespace App\Notifications;
 use App\Reply;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
 class YouWereMentioned extends Notification
@@ -64,7 +63,7 @@ class YouWereMentioned extends Notification
     public function toArray($notifiable)
     {
         return [
-            'message' => $this->subject->owner->name . ' mentioned you in ' . $this->subject->thread->title,
+            'message' => $this->subject->owner->name.' mentioned you in '.$this->subject->thread->title,
             'notifier' => $this->user(),
             'link' => $this->subject->path()
         ];
@@ -77,6 +76,7 @@ class YouWereMentioned extends Notification
     {
         return sprintf('%s mentioned you in "%s"', $this->user()->username, $this->subject->title());
     }
+
     /**
      * Get the associated user for the subject.
      */
