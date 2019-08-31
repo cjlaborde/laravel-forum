@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Channel;
-use App\Inspections\Spam;
-use App\Rules\Recaptcha;
 use App\Thread;
+use App\Channel;
+use App\Trending;
+use App\Rules\Recaptcha;
+use Illuminate\Http\Request;
 use App\Filters\ThreadFilters;
 use Illuminate\Validation\Rule;
-use App\Trending;
-use Illuminate\Http\Request;
-
 
 class ThreadsController extends Controller
 {
@@ -40,7 +38,6 @@ class ThreadsController extends Controller
 
 //        $trending->get();
 
-
 //        return view('threads.index', compact('threads', 'trending'));
         return view('threads.index', [
             'threads' => $threads,
@@ -69,24 +66,23 @@ class ThreadsController extends Controller
      */
     public function store(Recaptcha $recaptcha)
     {
-        # see the Json response when creating thread used for debugging
+        // see the Json response when creating thread used for debugging
 //        dd(request()->all());
-
 
 //        dd(auth()->user()->confirmed); // null to fix go to create_user_table and add confirmed boolean
 
-        # if not confirmed you need to redirect
+        // if not confirmed you need to redirect
 
 //        if (! auth()->user()->confirmed) {
 //            return redirect('/threads')->with('flash', 'You must first confirm your email address.');
 //        }
 
 //        dd(request()->all());
-        # SpamFree comes from App\Rules\SpamFree.php
+        // SpamFree comes from App\Rules\SpamFree.php
 
 //        dd($request->all());
 
-        #  1 Validate
+        //  1 Validate
         request()->validate([
             'title' => 'required|spamfree',
             'body' => 'required|spamfree',
@@ -101,7 +97,7 @@ class ThreadsController extends Controller
         ]);
 
 //        dd('where never even get to this point. this used for debugging');
-        # Create
+        // Create
         $thread = Thread::create([
             'user_id' => auth()->id(),
             'channel_id' => request('channel_id'),
@@ -112,7 +108,7 @@ class ThreadsController extends Controller
         if (request()->wantsJson()) {
             return response($thread, 201);
         }
-        # Redirect
+        // Redirect
         return redirect($thread->path())
             ->with('flash', 'Your thread has been published!');
     }
@@ -125,10 +121,9 @@ class ThreadsController extends Controller
      * @param Trending $trending
      * @return \Illuminate\Http\Response
      */
-
     public function show($channel, Thread $thread, Trending $trending)
     {
-        # Return json
+        // Return json
 //        return $thread;
 
         if (auth()->check()) {
@@ -142,6 +137,7 @@ class ThreadsController extends Controller
 
         return view('threads.show', compact('thread'));
     }
+
 //     * Display the specified resource.
 //     *
 //     * @param  integer     $channelId
@@ -150,24 +146,24 @@ class ThreadsController extends Controller
 //     */
 //    public function show($channel, Thread $thread)
 //    {
-////        return $thread; #show Json on page
-////        dd($thread->isSubscribedTo); # true or false if subscribed
+    ////        return $thread; #show Json on page
+    ////        dd($thread->isSubscribedTo); # true or false if subscribed
 //
-////        return $thread;
+    ////        return $thread;
 //
 //        # appends to the Json remember to add it to thread
-////        return $thread->append('isSubscribedTo');
+    ////        return $thread->append('isSubscribedTo');
 //
 //        #show Json on page
-////        return $thread->load('replies'); # show replies as well
-////        return Thread::withCount('replies')->first(); # returns replies_count as well
+    ////        return $thread->load('replies'); # show replies as well
+    ////        return Thread::withCount('replies')->first(); # returns replies_count as well
 //
 //        # get JSOn all replies with owners favorites as well.
-////        return $thread->load('replies.favorites')->load('replies.owner');
+    ////        return $thread->load('replies.favorites')->load('replies.owner');
 //        # show json with only replies
-////        return $thread->replies;
+    ////        return $thread->replies;
 //
-////        return $thread->replies();
+    ////        return $thread->replies();
 //
 //        // Record that the user visited this page.
 //        $key = sprintf("users.%s.visits.%s", auth()->id(), $thread->id);
@@ -188,7 +184,7 @@ class ThreadsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    #Accept Channel and Thread
+    //Accept Channel and Thread
     public function update($channel, Thread $thread)
     {
         // authorization
@@ -211,29 +207,26 @@ class ThreadsController extends Controller
      */
     public function destroy($channel, Thread $thread)
     {
-        # update corresponse to the function at Policies update
+        // update corresponse to the function at Policies update
 
-        # 1) Authorize Request
+        // 1) Authorize Request
         $this->authorize('update', $thread);
 
-        # if the thread user_id is not same as the logged in user abort.
+        // if the thread user_id is not same as the logged in user abort.
 //        if ($thread->user_id != auth()->id()) {
 //            abort(403, 'You do not have permission to do this.');
 //        }
 
-        # 2) Delete
+        // 2) Delete
         $thread->delete();
 
-        # 3) Return a response.
+        // 3) Return a response.
         if (request()->wantsJson()) {
             return response([], 204);
         }
 
         return redirect('/threads');
-
     }
-
-
 
     /**
      * @param Channel $channel
@@ -247,7 +240,7 @@ class ThreadsController extends Controller
         $threads = Thread::orderBy('pinned', 'DESC')
             ->latest()
             ->filter($filters);
-        # it did not replace the default latests that why popularity filter from ThreadFilters Do not work. so remove latests
+        // it did not replace the default latests that why popularity filter from ThreadFilters Do not work. so remove latests
 //        $threads = Thread::filter($filters);
 
         if ($channel->exists) {
@@ -259,5 +252,4 @@ class ThreadsController extends Controller
 //        return $threads->get();
         return $threads->paginate(config('forum.pagination.perPage'));
     }
-
 }

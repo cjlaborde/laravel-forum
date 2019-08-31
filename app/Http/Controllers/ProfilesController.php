@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Activity;
 use App\User;
-use Illuminate\Http\Request;
+use App\Activity;
 
 class ProfilesController extends Controller
 {
     public function show(User $user)
     {
-        # latest so that must recent activity as the top
-        # see all activities in website profile page
+        // latest so that must recent activity as the top
+        // see all activities in website profile page
 
-        # MANIPULATE JSON To ShowDATE
+        // MANIPULATE JSON To ShowDATE
         //        return $activities;
 
         return view('profiles.show', [
@@ -27,5 +26,4 @@ class ProfilesController extends Controller
     {
         return ['activities' => Activity::paginatedFeed($user)->paginate(5)];
     }
-
 }
