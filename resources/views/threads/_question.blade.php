@@ -36,7 +36,7 @@
 <div class="">
     <div class="flex">
         <img src="{{ $thread->creator->avatar_path }}"
-             alt="{{ $thread->creator->name }}"
+             alt="{{ $thread->creator->username }}"
              width="36"
              height="36"
              class="mr-1 bg-blue-darker rounded-full p-2">
@@ -46,7 +46,7 @@
 
             <p class="text-xs text-grey-darker mb-4">
                 Posted by <a href="{{ route('profile', $thread->creator) }}" class="text-blue link">
-                    {{ $thread->creator->name }} ({{ $thread->creator->reputation }} XP)
+                    {{ $thread->creator->username }} ({{ $thread->creator->reputation }} XP)
                 </a>
 
                 <span v-if="! editing">

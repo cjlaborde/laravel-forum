@@ -35,7 +35,6 @@ class Channel extends Model
      */
     public function getRouteKeyName()
     {
-        # we want laravel to use slug instead of primary id key so we override getRouteKeyName
         return 'slug';
     }
     /**

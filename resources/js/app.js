@@ -71,7 +71,9 @@ Vue.component("logout-button", require("./components/LogoutButton.vue").default)
 
 Vue.component("register", require("./components/Register.vue").default);
 
-Vue.component("highlight", require("./components/Highlight.vue"));
+Vue.component("highlight", require("./components/Highlight.vue").default);
+
+Vue.component("leaderboard", require("./components/Leaderboard.vue").default);
 
 Vue.component("paginator", require("./components/Paginator.vue").default);
 

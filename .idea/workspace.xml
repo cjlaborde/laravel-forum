@@ -2,10 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87231131-963f-4675-a6d5-c26c61d67cfe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/LeaderboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/LeaderboardController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/Leaderboard.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/leaderboard/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/svgs/icons/leaderboard.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/Auth/RegisterUserTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/LeaderboardTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Channel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Channel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filters/ThreadFilters.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filters/ThreadFilters.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChannelsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ChannelsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/NotifyMentionedUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/NotifyMentionedUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Activities.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Activities.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ActivityFavorite.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ActivityFavorite.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ActivityLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ActivityLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ActivityReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ActivityReply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ActivityThread.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ActivityThread.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AvatarForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AvatarForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Highlight.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Highlight.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/channels/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/activities/created_favorite.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/activities/created_favorite.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/activities/created_reply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/activities/created_reply.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/activities/created_thread.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/activities/created_thread.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_question.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/reply.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/reply.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/ProfilesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ProfilesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,25 +194,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.ReplyTest.a_reply_knows_the_total_xp_earned">
-    <configuration name="ProfilesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ProfilesTest" file="$PROJECT_DIR$/tests/Feature/ProfilesTest.php" scope="Class" />
+  <component name="RunManager" selected="PHPUnit.RegisterUserTest">
+    <configuration name="MentionUsersTest.it_can_fetch_all_mentioned_users_starting_with_the_given_characters" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\MentionUsersTest" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="it_can_fetch_all_mentioned_users_starting_with_the_given_characters" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ProfilesTest.profiles_display_all_threads_created_by_the_associated_user" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ProfilesTest" file="$PROJECT_DIR$/tests/Feature/ProfilesTest.php" method="profiles_display_all_threads_created_by_the_associated_user" scope="Method" />
+    <configuration name="MentionUsersTest.mentioned_users_in_a_reply_notified" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\MentionUsersTest" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="mentioned_users_in_a_reply_notified" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ProfilesTest.a_user_has_a_profile" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ProfilesTest" file="$PROJECT_DIR$/tests/Feature/ProfilesTest.php" method="a_user_has_a_profile" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="RegisterUserTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Auth\RegisterUserTest" file="$PROJECT_DIR$/tests/Feature/Auth/RegisterUserTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="ReplyTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\ReplyTest" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ReplyTest.a_reply_knows_the_total_xp_earned" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ReplyTest" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="a_reply_knows_the_total_xp_earned" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ReplyTest.it_generates_the_correct_path_for_a_paginated_thread" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ReplyTest" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_generates_the_correct_path_for_a_paginated_thread" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -184,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ReplyTest.a_reply_knows_the_total_xp_earned" />
+        <item itemvalue="PHPUnit.RegisterUserTest" />
         <item itemvalue="PHPUnit.ReplyTest" />
-        <item itemvalue="PHPUnit.ProfilesTest" />
-        <item itemvalue="PHPUnit.ProfilesTest.profiles_display_all_threads_created_by_the_associated_user" />
-        <item itemvalue="PHPUnit.ReplyTest.it_generates_the_correct_path_for_a_paginated_thread" />
+        <item itemvalue="PHPUnit.ProfilesTest.a_user_has_a_profile" />
+        <item itemvalue="PHPUnit.MentionUsersTest.mentioned_users_in_a_reply_notified" />
+        <item itemvalue="PHPUnit.MentionUsersTest.it_can_fetch_all_mentioned_users_starting_with_the_given_characters" />
       </list>
     </recent_temporary>
   </component>
@@ -207,7 +244,8 @@
       <workItem from="1566910221359" duration="2984000" />
       <workItem from="1567002648015" duration="31213000" />
       <workItem from="1567091551214" duration="34488000" />
-      <workItem from="1567172495824" duration="20580000" />
+      <workItem from="1567172495824" duration="27390000" />
+      <workItem from="1567259935585" duration="3402000" />
     </task>
     <task id="LOCAL-00001" summary="Require email confirmation for new thread page. - resolve #1">
       <created>1566770338667</created>

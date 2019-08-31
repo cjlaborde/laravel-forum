@@ -9,8 +9,8 @@
             <a class="text-blue font-bold mb-4" :href="activity.subject.path">"{{ activity.subject.title }}"</a>
             <p class="text-2xs text-grey-darkest font-medium mb-4">
                 Posted By:
-                <a :href="activity.subject.creator.name" class="text-blue">
-                    {{ activity.subject.creator.name }}
+                <a :href="activity.subject.creator.username" class="text-blue">
+                    {{ activity.subject.creator.username }}
                 </a>
             </p>
         </div>

@@ -9,7 +9,7 @@ class ProfilesTest extends TestCase
     function a_user_has_a_profile()
     {
         $user = create('App\User');
-        $this->get("/profiles/{$user->name}")
+        $this->get("/profiles/{$user->username}")
             ->assertSee($user->name);
     }
 }

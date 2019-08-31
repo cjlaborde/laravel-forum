@@ -8,8 +8,8 @@
         <div slot="heading" class="text-xl font-semibold my-4">
             <a class="text-blue font-bold mb-4" :href="activity.favoritedModel.path">"{{ activity.favoritedModel.thread.title }}"</a>
             <p class="text-2xs text-grey-darkest font-medium mb-4">
-                Posted By: <a :href="activity.favoritedModel.thread.creator.name" class="text-blue">{{
-                activity.favoritedModel.thread.creator.name }}</a>
+                Posted By: <a :href="activity.favoritedModel.thread.creator.username" class="text-blue">{{
+                activity.favoritedModel.thread.creator.username }}</a>
             </p>
         </div>
 
