@@ -11,7 +11,7 @@
     },
     "devDependencies": {
         "@fortawesome/fontawesome-free": "^5.10.1",
-        "axios": "^0.19",
+        "axios": "^0.21",
         "browser-sync": "^2.23.6",
         "browser-sync-webpack-plugin": "^2.0.1",
         "bootstrap": "^4.1.0",
