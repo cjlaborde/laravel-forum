@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Reply;
-use App\Favorite;
 
 class FavoritesController extends Controller
 {

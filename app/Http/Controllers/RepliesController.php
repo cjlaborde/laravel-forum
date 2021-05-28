@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Http\Requests\CreatePostRequest;
 use App\Reply;
 use App\Thread;
-use App\Http\Requests\CreatePostRequest;
+use App\User;
 
 class RepliesController extends Controller
 {
@@ -35,9 +35,9 @@ class RepliesController extends Controller
         }
         // 3 add the reply
         return $thread->addReply([
-                'body' => request('body'),
-                'user_id' => auth()->id()
-            ])->load('owner');
+            'body' => request('body'),
+            'user_id' => auth()->id()
+        ])->load('owner');
     }
 
     /**
