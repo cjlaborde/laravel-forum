@@ -32,6 +32,7 @@ trait RecordsActivity
     /**
      * @param $event
      * @return string
+     *
      * @throws \ReflectionException
      */
     protected function getActivityType($event): string

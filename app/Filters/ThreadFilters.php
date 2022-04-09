@@ -11,8 +11,9 @@ class ThreadFilters extends Filters
 
     /**
      * Filter the query by a given username.
+     *
      * @param $builder
-     * @param string $username
+     * @param  string  $username
      * @return mixed
      */
     public function by($username)
@@ -24,6 +25,7 @@ class ThreadFilters extends Filters
 
     /**
      * Filter the query according to most popular threads.
+     *
      * @return mixed
      */
     protected function popular()
