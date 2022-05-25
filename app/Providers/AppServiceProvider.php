@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
-     * @param Trending $trending
+     * @param  Trending  $trending
      * @return void
      */
     public function boot(Trending $trending)
