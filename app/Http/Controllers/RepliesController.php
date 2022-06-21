@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Http\Requests\CreatePostRequest;
 use App\Reply;
 use App\Thread;
-use App\Http\Requests\CreatePostRequest;
+use App\User;
 
 class RepliesController extends Controller
 {
@@ -23,10 +23,10 @@ class RepliesController extends Controller
     }
 
     /**
-     * @param int $channelId
-     * @param Thread $thread
-     * @param CreatePostRequest $form
-     * @return  \Illuminate\Http\RedirectResponse
+     * @param  int  $channelId
+     * @param  Thread  $thread
+     * @param  CreatePostRequest  $form
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store($channelId, Thread $thread, CreatePostRequest $form)
     {
@@ -35,14 +35,15 @@ class RepliesController extends Controller
         }
         // 3 add the reply
         return $thread->addReply([
-                'body' => request('body'),
-                'user_id' => auth()->id()
-            ])->load('owner');
+            'body' => request('body'),
+            'user_id' => auth()->id()
+        ])->load('owner');
     }
 
     /**
-     * @param Reply $reply
-     * @param Spam $spam
+     * @param  Reply  $reply
+     * @param  Spam  $spam
+     *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      * @throws \Illuminate\Validation\ValidationException
      */

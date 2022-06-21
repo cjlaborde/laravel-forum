@@ -1,13 +1,13 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+use App\Channel;
 use App\Reply;
 use App\Thread;
-use App\Channel;
-use Illuminate\Support\Str;
+use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Notifications\DatabaseNotification;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +41,8 @@ $factory->state(App\User::class, 'unconfirmed', function () {
 $factory->state(App\User::class, 'administrator', function () {
     return [
         // login to create an admin. John = Admin in User.php isAdmin function
-//        'name' => 'John'
-          'isAdmin' => true
+        //        'name' => 'John'
+        'isAdmin' => true
         // 'is_admin = true
     ];
 });
