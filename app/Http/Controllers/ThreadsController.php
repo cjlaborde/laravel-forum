@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Thread;
 use App\Channel;
-use App\Trending;
-use App\Rules\Recaptcha;
-use Illuminate\Http\Request;
 use App\Filters\ThreadFilters;
+use App\Rules\Recaptcha;
+use App\Thread;
+use App\Trending;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
 class ThreadsController extends Controller
@@ -23,9 +23,9 @@ class ThreadsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @param Channel $channel
-     * @param ThreadFilters $filters
-     * @param Trending $trending
+     * @param  Channel  $channel
+     * @param  ThreadFilters  $filters
+     * @param  Trending  $trending
      * @return \Illuminate\Http\Response
      */
     public function index(Channel $channel, ThreadFilters $filters)
@@ -60,8 +60,9 @@ class ThreadsController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Recaptcha $recaptcha
+     * @param  Recaptcha  $recaptcha
      * @return \Illuminate\Http\Response
+     *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Recaptcha $recaptcha)
@@ -86,14 +87,14 @@ class ThreadsController extends Controller
         request()->validate([
             'title' => 'required|spamfree',
             'body' => 'required|spamfree',
-//            'channel_id' => 'required|exists:channels,id',
+            //            'channel_id' => 'required|exists:channels,id',
             'channel_id' => [
-              'required',
-              Rule::exists('channels', 'id')->where(function ($query) {
-                  $query->where('archived', false);
-              })
+                'required',
+                Rule::exists('channels', 'id')->where(function ($query) {
+                    $query->where('archived', false);
+                })
             ],
-//            'g-recaptcha-response' => ['required', $recaptcha]
+            //            'g-recaptcha-response' => ['required', $recaptcha]
         ]);
 
 //        dd('where never even get to this point. this used for debugging');
@@ -117,8 +118,8 @@ class ThreadsController extends Controller
      * Display the specified resource.
      *
      * @param $channel
-     * @param \App\Thread $thread
-     * @param Trending $trending
+     * @param  \App\Thread  $thread
+     * @param  Trending  $trending
      * @return \Illuminate\Http\Response
      */
     public function show($channel, Thread $thread, Trending $trending)
@@ -180,7 +181,7 @@ class ThreadsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Thread $thread
+     * @param  \App\Thread  $thread
      * @return \Illuminate\Http\Response
      */
 
@@ -202,7 +203,7 @@ class ThreadsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Thread $thread
+     * @param  \App\Thread  $thread
      * @return \Illuminate\Http\Response
      */
     public function destroy($channel, Thread $thread)
@@ -229,8 +230,8 @@ class ThreadsController extends Controller
     }
 
     /**
-     * @param Channel $channel
-     * @param ThreadFilters $filters
+     * @param  Channel  $channel
+     * @param  ThreadFilters  $filters
      * @return mixed
      */
     private function getThreads(Channel $channel, ThreadFilters $filters)
