@@ -27,8 +27,8 @@ class UserNotificationsController extends Controller
     /**
      * Mark a specific notification as read.
      *
-     * @param \App\User $user
-     * @param int       $notificationId
+     * @param  \App\User  $user
+     * @param  int  $notificationId
      */
     public function destroy(User $user, $notificationId)
     {
